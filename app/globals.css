@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    background-color: rgb(18, 13, 10);
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1vw;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1vw;
+}
+
+h1 { margin: 0; font-size: 3vw; }
+p { font-size: 1.5vw; }
+
+path {
+    fill: none;
+    stroke: white;
+    stroke-width: 0.02vw;
+    stroke-dasharray: 200%;
+    stroke-dashoffset: 200%;
+    animation: dash 4s ease-in-out forwards;
+    /* animation-delay: 1s; */
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 200%;
+    }
+    to {
+        stroke-dashoffset: 0%;
+    }
+}
+
+.right {
+    padding: 7.5vh 0;
+    position: relative;
+    left: 75%;
+    max-width: 45vw;
+    text-align: center;
+    transform: translateX(-50%);
+}
