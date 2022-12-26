@@ -1,10 +1,12 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 
 import Background from "./assets/home_bg.png"
 import DrawnLogo from "./assets/logo_drawn.gif"
 import Image from "next/image"
 
-export default async function Home() {
+export default function Home() {
   return (
     <div>
       <style jsx global>{`
@@ -59,27 +61,27 @@ export default async function Home() {
           <Image src={Background} alt="background" fill />
         </div>
 
-        {/* <div style={{
+        <div style={{
           width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)",
         }}>
-          <div style={{ 
+          {/* <div style={{ 
             position:"absolute", top:0, transform:"translate(0, 10vw)",
             opacity:0, animation:"fadeIn ease 2s", animationDelay:"2s", animationFillMode:"forwards"
           }}>
             <h1 style={{ fontSize:"3vw" }}>Hi! We are</h1>
-          </div>
+          </div> */}
           <Image src={DrawnLogo} alt="logo" fill />
-          <div style={{
+          {/* <div style={{
             position:"absolute", bottom:0, transform:"translate(0, -12vw)",
             opacity:0, animation:"fadeIn ease 2s", animationDelay:"2s", animationFillMode:"forwards"
           }}>
             <h1 style={{ fontSize:"2vw" }}>@ Amsterdam International Community School</h1>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
 
-        <img src={DrawnLogo} alt="logo" style={{
+        {/* <img src={DrawnLogo} alt="logo" style={{
           width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)",
-        }} />
+        }} /> */}
 
       </div>
 
