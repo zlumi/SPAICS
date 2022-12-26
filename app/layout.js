@@ -4,7 +4,7 @@ import './globals.css';
 export default async function RootLayout({ children }) {
   return (
     <html>
-      <head></head>
+      {/* <head></head> */}
       <body>
         <NavBar/>
         {children}
