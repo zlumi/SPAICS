@@ -3,9 +3,6 @@
 /* eslint-disable @next/next/no-img-element */
 
 import bg1 from "./assets/backgrounds/1.png"
-import bg2 from "./assets/backgrounds/2.png"
-import bg3 from "./assets/backgrounds/3.png"
-import bg4 from "./assets/backgrounds/4.png"
 import DrawnLogo from "./assets/logo_drawn.gif"
 import Image from "next/image"
 
@@ -30,25 +27,6 @@ export default function Home() {
           25% { opacity:1; }
           30% { opacity:0; }
           100% { opacity:0; }
-        }
-
-        .booth {
-          position: absolute;
-          z-index: -1;
-          width: 120vw;
-          height: 80vw;
-          top: 50%;
-          left: 25%;
-          transform: translate(-50%, -50%);
-          opacity: 0;
-          animation: fadeIn ease 2s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-        }
-
-        .booth img {
-          animation: boothFade 40s infinite;
-          opacity: 0;
         }
       `}</style>
 
@@ -76,34 +54,16 @@ export default function Home() {
 
       <div style={{ width:"100vw", height:"97vh", overflow:"hidden", position:"relative" }}>
 
-        <div className="booth">
-          <Image src={bg1} alt="background" fill style={{ animationDelay:"2s" }}/>
-          <Image src={bg2} alt="background" fill style={{ animationDelay:"12s" }} />
-          <Image src={bg3} alt="background" fill style={{ animationDelay:"22s" }} />
-          <Image src={bg4} alt="background" fill style={{ animationDelay:"32s" }} />
+        <div style={{ 
+          position:"absolute",zIndex:-1, width:"120vw", height:"80vw", top:"50%", left:"25%", transform:"translate(-50%, -50%)",
+          opacity:0, animation:"fadeIn ease 2s", animationDelay:"1s", animationFillMode:"forwards",
+         }}>
+          <Image src={bg1} alt="background" fill />
         </div>
 
-        <div style={{
-          width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)",
-        }}>
-          {/* <div style={{ 
-            position:"absolute", top:0, transform:"translate(0, 10vw)",
-            opacity:0, animation:"fadeIn ease 2s", animationDelay:"2s", animationFillMode:"forwards"
-          }}>
-            <h1 style={{ fontSize:"3vw" }}>Hi! We are</h1>
-          </div> */}
+        <div style={{ width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)" }}>
           <Image src={DrawnLogo} alt="logo" fill />
-          {/* <div style={{
-            position:"absolute", bottom:0, transform:"translate(0, -12vw)",
-            opacity:0, animation:"fadeIn ease 2s", animationDelay:"2s", animationFillMode:"forwards"
-          }}>
-            <h1 style={{ fontSize:"2vw" }}>@ Amsterdam International Community School</h1>
-          </div> */}
         </div>
-
-        {/* <img src={DrawnLogo} alt="logo" style={{
-          width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)",
-        }} /> */}
 
       </div>
 
