@@ -10,52 +10,45 @@ export default function Home() {
   return (
     <div>
       <style jsx global>{`
-      @keyframes fadeIn {
-        from { opacity:0; }
-        to { opacity:1; }
-      }
-
-      @keyframes shine {
-        to {
-          background-position: 200% center;
+        @keyframes fadeIn {
+          from { opacity:0; }
+          to { opacity:1; }
         }
-      }
-      
-      .sweepable p {
-        font-family: "Times New Roman", Times, serif;
-        margin: 0;
-      }
 
-      .sweepable {
-        color: black;
-        position: absolute;
-        left: 50%;
-        bottom: 5%;
-        z-index: 3;
-        transform: translateX(-50%);
-        text-align: center;
+        @keyframes shine {
+          0% { background-position: 150% center; opacity:0; }
+          50% { background-position: 150% center; }
+          100% { background-position: -80% center; opacity:1; }
+        }
+      `}</style>
 
-        background: linear-gradient(45deg, rgba(255,255,255,1) 45%, rgba(255,255,255,0) 55%);
-        background-size: 200% 100%;
-        animation: shine 2s;
+      <div style={{
+        backgroundPosition:"150% center",
+        background:`linear-gradient(
+          -45deg,
+          #EEC643 50%,
+          #FFFF00 60%,
+          #EEC643 70%
+        )`,
+        animation:"shine 4s forwards",
 
-        // only show background on text
-        background-clip: text; 
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    `}</style>
+        backgroundSize:"200% 100%", backgroundClip:"text", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
 
-    <div className="sweepable">
-      <p>CanSat Competition Team 2022-2023</p>
-      <p>@ Amsterdam International Community School</p>
-    </div>
+        color:"#DAD2D8", position:"absolute", left:"50%", zIndex:3, textAlign:"center",
+        transform:"translateX(-50%)", top:"85%", opacity:0,
+      }}>
+        <p style={{ fontFamily:'"Times New Roman", Times, serif', margin:0, fontWeight:"bold" }}>
+          CanSat Competition Team 2022-2023
+          <br/>
+          @ Amsterdam International Community School
+        </p>
+      </div>
 
       <div style={{ width:"100vw", height:"97vh", overflow:"hidden", position:"relative" }}>
 
         <div style={{ 
           position:"absolute", zIndex:-1, width: "120vw", height: "80vw",
-          top:"50%", left:"25%", transform:"translate(-50%, -50%)", 
+          top:"50%", left:"25%", transform:"translate(-50%, -50%)",
           opacity:0, animation:"fadeIn ease 2s", animationDelay:"1s", animationFillMode:"forwards"
         }}>
           <Image src={Background} alt="background" fill />
@@ -87,7 +80,7 @@ export default function Home() {
 
       <div className="right" style={{ transform:"translate(-50%, -50%)", padding:0 }}>
         <svg height="30vh" viewBox="0 0 4 26">
-          <path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23" />
+          <path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23" style={{ animationDelay:"3s" }} />
         </svg>
       </div>
 
