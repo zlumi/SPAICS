@@ -2,7 +2,10 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-import Background from "./assets/home_bg.png"
+import bg1 from "./assets/backgrounds/1.png"
+import bg2 from "./assets/backgrounds/2.png"
+import bg3 from "./assets/backgrounds/3.png"
+import bg4 from "./assets/backgrounds/4.png"
 import DrawnLogo from "./assets/logo_drawn.gif"
 import Image from "next/image"
 
@@ -19,6 +22,33 @@ export default function Home() {
           0% { background-position: 150% center; opacity:0; }
           50% { background-position: 150% center; }
           100% { background-position: -80% center; opacity:1; }
+        }
+
+        @keyframes boothFade {
+          0% { opacity:0; }
+          5% { opacity:1; }
+          25% { opacity:1; }
+          30% { opacity:0; }
+          100% { opacity:0; }
+        }
+
+        .booth {
+          position: absolute;
+          z-index: -1;
+          width: 120vw;
+          height: 80vw;
+          top: 50%;
+          left: 25%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          animation: fadeIn ease 2s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+        }
+
+        .booth img {
+          animation: boothFade 40s infinite;
+          opacity: 0;
         }
       `}</style>
 
@@ -46,12 +76,11 @@ export default function Home() {
 
       <div style={{ width:"100vw", height:"97vh", overflow:"hidden", position:"relative" }}>
 
-        <div style={{ 
-          position:"absolute", zIndex:-1, width: "120vw", height: "80vw",
-          top:"50%", left:"25%", transform:"translate(-50%, -50%)",
-          opacity:0, animation:"fadeIn ease 2s", animationDelay:"1s", animationFillMode:"forwards"
-        }}>
-          <Image src={Background} alt="background" fill />
+        <div className="booth">
+          <Image src={bg1} alt="background" fill style={{ animationDelay:"2s" }}/>
+          <Image src={bg2} alt="background" fill style={{ animationDelay:"12s" }} />
+          <Image src={bg3} alt="background" fill style={{ animationDelay:"22s" }} />
+          <Image src={bg4} alt="background" fill style={{ animationDelay:"32s" }} />
         </div>
 
         <div style={{
