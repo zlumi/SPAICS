@@ -3,11 +3,11 @@
 /* eslint-disable @next/next/no-img-element */
 
 import bg1 from "./assets/backgrounds/1.png"
-import DrawnLogo from "./assets/logo_drawn.gif"
+import logo_drawn from "./assets/logo_drawn.gif"
 import Image from "next/image"
 
 import { useInView } from "react-intersection-observer"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 
 function RightVertConnector({ style }) {
@@ -39,13 +39,36 @@ function RightVertConnector({ style }) {
   );
 }
 
-export default function Home() {
+function DrawnLogo() {
+  const [showGif, setShowGif] = useState(false)
+
   useEffect(() => {
-    window.history.scrollRestoration = 'manual'
+    setShowGif(true);
   }, []);
 
   return (
-    <div>
+    <div style={{ width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)" }}>
+      {/* <Image src={DrawnLogo} alt="logo" fill priority onLoad={() => { NEED_TO_RESET_GIF_STATE_SOMEHOW }}/> */}
+      <Image src={DrawnLogo} alt="logo" fill priority />
+
+      {showGif ? (
+        <Image src={logo_drawn} alt="logo" fill priority onEnded={() => setShowGif(false)} />
+      ) : (
+        <button onClick={() => setShowGif(true)}>Show GIF</button>
+      )}
+    </div>
+  )
+}
+
+export default function Home() {
+  useEffect(() => {
+    window.BeforeUnloadEvent = () => {
+      window.scrollTo(0, 0)
+    }
+  }, []);
+
+  return (
+    <div style={{ position:"relative" }}>
       <style jsx global>{`
         @keyframes fadeIn {
           from { opacity:0; }
@@ -58,12 +81,44 @@ export default function Home() {
           100% { background-position: -80% center; opacity:1; }
         }
 
-        @keyframes boothFade {
-          0% { opacity:0; }
-          5% { opacity:1; }
-          25% { opacity:1; }
-          30% { opacity:0; }
-          100% { opacity:0; }
+        .photobooth {
+          height: 100%;
+          max-width: 45vw;
+          margin: 2.5%;
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          overflow: hidden;
+        }
+
+        .photobooth div {
+          margin: 0.25vw;
+          background: red;
+          border-radius: 3rem;
+
+          width: 22vw;
+          min-width: 180px;
+
+          max-width: 44.5vw;
+          max-height: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .photobooth div img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .right {
+          padding: 3rem 0;
+          position: relative;
+          left: 75%;
+          max-width: 45vw;
+          text-align: center;
+          transform: translateX(-50%);
         }
       `}</style> {/* local stylesheet */}
 
@@ -80,7 +135,7 @@ export default function Home() {
         backgroundSize:"200% 100%", backgroundClip:"text", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent",
 
         color:"#DAD2D8", position:"absolute", left:"50%", zIndex:3, textAlign:"center",
-        transform:"translateX(-50%)", top:"85%", opacity:0,
+        transform:"translateX(-50%)", top:"85vh", opacity:0,
       }}>
         <p style={{ fontFamily:'"Times New Roman", Times, serif', margin:0, fontWeight:"bold" }}>
           CanSat Competition Team 2022-2023
@@ -91,31 +146,46 @@ export default function Home() {
 
       <div style={{ width:"100vw", height:"97vh", overflow:"hidden", position:"relative" }}>
 
-        <div style={{ 
+        <div style={{
           position:"absolute",zIndex:-1, width:"120vw", height:"80vw", top:"50%", left:"25%", transform:"translate(-50%, -50%)",
           opacity:0, animation:"fadeIn ease 2s", animationDelay:"1s", animationFillMode:"forwards",
-         }}>
+        }}>
           <Image src={bg1} alt="background" fill />
         </div>
 
-        <div style={{ width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)" }}>
-          <Image src={DrawnLogo} alt="logo" fill priority />
-        </div>
+        <DrawnLogo />
 
       </div> {/* images */}
 
+      <div style={{ position:"relative" }}>
       <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
-
-      <div className="right" style={{ paddingTop:0 }}>
-        <h1>HHHHHHHH</h1>
-        <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd</p>
-      </div>
-
-      <RightVertConnector />
-
-      <div className="right">
-        <h1>HHHHHHHH</h1>
-        <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
+        <div className="photobooth" style={{ transform:"translateY(-30vh)" }}>
+          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg"} alt="photo" /></div>
+          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg"} alt="photo" /></div>
+          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg"} alt="photo" /></div>
+          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/8/8e/Delta_IV_Heavy_Rocket.jpg"} alt="photo" /></div>
+          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/8/8e/Delta_IV_Heavy_Rocket.jpg"} alt="photo" /></div>
+          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/8/8e/Delta_IV_Heavy_Rocket.jpg"} alt="photo" /></div>
+        </div>
+        <div className="right" style={{ paddingTop:0 }}>
+          <h1>HHHHHHHH</h1>
+          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd</p>
+        </div>
+        <RightVertConnector />
+        <div className="right">
+          <h1>HHHHHHHH</h1>
+          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
+        </div>
+        <RightVertConnector />
+        <div className="right">
+          <h1>HHHHHHHH</h1>
+          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
+        </div>
+        <RightVertConnector />
+        <div className="right">
+          <h1>HHHHHHHH</h1>
+          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
+        </div>
       </div>
     </div>
   )

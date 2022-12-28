@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&display=swap');
 
 body {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
     color: #DAD2D8;
     background-color: rgb(18, 13, 10);
     overflow-x: hidden;
+    font-family: 'Nunito Sans' !important;
 }
 
 .navbar {
@@ -33,13 +33,4 @@ path {
     fill: none;
     stroke: #DAD2D8;
     stroke-width: 0.02vw;
-}
-
-.right {
-    padding: 3rem 0;
-    position: relative;
-    left: 75%;
-    max-width: 45vw;
-    text-align: center;
-    transform: translateX(-50%);
 }
