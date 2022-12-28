@@ -1,64 +1,11 @@
 'use client';
-
 /* eslint-disable @next/next/no-img-element */
-
-import bg1 from "./assets/backgrounds/1.png"
-import logo_drawn from "./assets/logo_drawn.gif"
 import Image from "next/image"
+import bg1 from "./assets/backgrounds/1.png"
+import RightVertConnector from "./components/home-components/rightvertconn";
+import DrawnLogo from "./components/home-components/drawnlogo";
 
-import { useInView } from "react-intersection-observer"
-import { useEffect, useState } from "react"
-import { motion, useAnimation } from "framer-motion"
-
-function RightVertConnector({ style }) {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  })
-  const animation = useAnimation()
-
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        pathLength: 1.05,
-        transition: {
-          duration: 4
-        }
-      })
-    }
-  }, [animation, inView])
-
-  return (
-    <div className="right" ref={ref} style={style}>
-      <svg height="30vh" viewBox="0 0 4 26">
-        <motion.path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23"
-          initial={{ pathLength: .05 }}
-          animate={ animation } 
-        />
-      </svg>
-    </div>
-  );
-}
-
-function DrawnLogo() {
-  const [showGif, setShowGif] = useState(false)
-
-  useEffect(() => {
-    setShowGif(true);
-  }, []);
-
-  return (
-    <div style={{ width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)" }}>
-      {/* <Image src={DrawnLogo} alt="logo" fill priority onLoad={() => { NEED_TO_RESET_GIF_STATE_SOMEHOW }}/> */}
-      <Image src={DrawnLogo} alt="logo" fill priority />
-
-      {showGif ? (
-        <Image src={logo_drawn} alt="logo" fill priority onEnded={() => setShowGif(false)} />
-      ) : (
-        <button onClick={() => setShowGif(true)}>Show GIF</button>
-      )}
-    </div>
-  )
-}
+import { useEffect } from "react"
 
 export default function Home() {
   useEffect(() => {
@@ -66,6 +13,15 @@ export default function Home() {
       window.scrollTo(0, 0)
     }
   }, []);
+
+  const gallaryImgIDs = [
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+  ]
 
   return (
     <div style={{ position:"relative" }}>
@@ -94,7 +50,7 @@ export default function Home() {
 
         .photobooth div {
           margin: 0.25vw;
-          background: red;
+          background: #152238;
           border-radius: 3rem;
 
           width: 22vw;
@@ -104,6 +60,13 @@ export default function Home() {
           max-height: 100%;
           overflow: hidden;
           position: relative;
+
+          transition: transform 0.2s ease-in-out;
+        }
+
+        .photobooth div:hover {
+          cursor: pointer;
+          transform: scale(1.05);
         }
 
         .photobooth div img {
@@ -160,12 +123,11 @@ export default function Home() {
       <div style={{ position:"relative" }}>
       <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
         <div className="photobooth" style={{ transform:"translateY(-30vh)" }}>
-          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg"} alt="photo" /></div>
-          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg"} alt="photo" /></div>
-          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg"} alt="photo" /></div>
-          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/8/8e/Delta_IV_Heavy_Rocket.jpg"} alt="photo" /></div>
-          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/8/8e/Delta_IV_Heavy_Rocket.jpg"} alt="photo" /></div>
-          <div><img src={"https://upload.wikimedia.org/wikipedia/commons/8/8e/Delta_IV_Heavy_Rocket.jpg"} alt="photo" /></div>
+          {gallaryImgIDs.map((id, index) => (
+            <div key={index}>
+              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+            </div>
+          ))}
         </div>
         <div className="right" style={{ paddingTop:0 }}>
           <h1>HHHHHHHH</h1>
