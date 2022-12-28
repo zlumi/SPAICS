@@ -10,9 +10,9 @@ import { useInView } from "react-intersection-observer"
 import { useEffect } from "react"
 import { motion, useAnimation } from "framer-motion"
 
-export default function Home() {
+function RightVertConnector({ style }) {
   const { ref, inView } = useInView({
-    threshold: 0.25,
+    threshold: 0.1,
   })
   const animation = useAnimation()
 
@@ -26,6 +26,23 @@ export default function Home() {
       })
     }
   }, [animation, inView])
+
+  return (
+    <div className="right" ref={ref} style={style}>
+      <svg height="30vh" viewBox="0 0 4 26">
+        <motion.path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23"
+          initial={{ pathLength: .05 }}
+          animate={ animation } 
+        />
+      </svg>
+    </div>
+  );
+}
+
+export default function Home() {
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, []);
 
   return (
     <div>
@@ -87,28 +104,14 @@ export default function Home() {
 
       </div> {/* images */}
 
-      <div className="right" style={{ transform:"translate(-50%, -50%)", padding:0 }}>
-        <svg height="30vh" viewBox="0 0 4 26">
-          <motion.path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23"
-            initial={{ pathLength: .05 }}
-            animate={ animation } 
-          />
-        </svg>
-      </div>
+      <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
 
       <div className="right" style={{ paddingTop:0 }}>
         <h1>HHHHHHHH</h1>
         <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd</p>
       </div>
 
-      <div className="right" ref={ref}>
-        <svg height="30vh" viewBox="0 0 4 26">
-          <motion.path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23"
-            initial={{ pathLength: .05 }}
-            animate={ animation } 
-          />
-        </svg>
-      </div>
+      <RightVertConnector />
 
       <div className="right">
         <h1>HHHHHHHH</h1>
