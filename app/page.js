@@ -6,9 +6,27 @@ import bg1 from "./assets/backgrounds/1.png"
 import DrawnLogo from "./assets/logo_drawn.gif"
 import Image from "next/image"
 
-import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react"
+import { motion, useAnimation } from "framer-motion"
 
 export default function Home() {
+  const { ref, inView } = useInView({
+    threshold: 0.25,
+  })
+  const animation = useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        pathLength: 1.05,
+        transition: {
+          duration: 4
+        }
+      })
+    }
+  }, [animation, inView])
+
   return (
     <div>
       <style jsx global>{`
@@ -72,16 +90,29 @@ export default function Home() {
       <div className="right" style={{ transform:"translate(-50%, -50%)", padding:0 }}>
         <svg height="30vh" viewBox="0 0 4 26">
           <motion.path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 4 }}
+            initial={{ pathLength: .05 }}
+            animate={ animation } 
           />
         </svg>
-      </div> {/* connector */}
+      </div>
 
       <div className="right" style={{ paddingTop:0 }}>
         <h1>HHHHHHHH</h1>
         <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd</p>
+      </div>
+
+      <div className="right" ref={ref}>
+        <svg height="30vh" viewBox="0 0 4 26">
+          <motion.path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23"
+            initial={{ pathLength: .05 }}
+            animate={ animation } 
+          />
+        </svg>
+      </div>
+
+      <div className="right">
+        <h1>HHHHHHHH</h1>
+        <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
       </div>
     </div>
   )
