@@ -6,6 +6,8 @@ import bg1 from "./assets/backgrounds/1.png"
 import DrawnLogo from "./assets/logo_drawn.gif"
 import Image from "next/image"
 
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <div>
@@ -28,7 +30,7 @@ export default function Home() {
           30% { opacity:0; }
           100% { opacity:0; }
         }
-      `}</style>
+      `}</style> {/* local stylesheet */}
 
       <div style={{
         backgroundPosition:"150% center",
@@ -50,7 +52,7 @@ export default function Home() {
           <br/>
           @ Amsterdam International Community School
         </p>
-      </div>
+      </div> {/* Name text */}
 
       <div style={{ width:"100vw", height:"97vh", overflow:"hidden", position:"relative" }}>
 
@@ -62,33 +64,25 @@ export default function Home() {
         </div>
 
         <div style={{ width:"50vw", height:"50vw", position:"absolute", top:"50%", left:"75%", transform:"translate(-50%, -50%)" }}>
-          <Image src={DrawnLogo} alt="logo" fill />
+          <Image src={DrawnLogo} alt="logo" fill priority />
         </div>
 
-      </div>
+      </div> {/* images */}
 
       <div className="right" style={{ transform:"translate(-50%, -50%)", padding:0 }}>
         <svg height="30vh" viewBox="0 0 4 26">
-          <path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23" style={{ animationDelay:"3s" }} />
+          <motion.path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 4 }}
+          />
         </svg>
-      </div>
+      </div> {/* connector */}
 
       <div className="right" style={{ paddingTop:0 }}>
         <h1>HHHHHHHH</h1>
         <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd</p>
       </div>
-
-      <div className="right">
-        <svg height="30vh" viewBox="0 0 4 26">
-          <path d = "M2 3A1 1 0 002 1 1 1 0 002 3L2 23C2 23 2 23 2 23A1 1 0 002 25 1 1 0 002 23" />
-        </svg>
-      </div>
-
-      <div className="right">
-        <h1>HHHHHHHH</h1>
-        <p>kldsajflkfsadkjlklfadlskk lkadsfjklklsdafladsfkjfasdjkkkjdfsa lkajskdfljklasd lkfjalsdkjf lkajsdlkf kldsajflkfsadkjlklfadlskk lkadsfjklklsdafladsfkjfasdjkkkjdfsa lkajskdfljklasd lkfjalsdkjf lkajsdlkf kldsajflkfsadkjlklfadlskk lkadsfjklklsdafladsfkjfasdjkkkjdfsa lkajskdfljklasd lkfjalsdkjf lkajsdlkf kldsajflkfsadkjlklfadlskk lkadsfjklklsdafladsfkjfasdjkkkjdfsa lkajskdfljklasd lkfjalsdkjf lkajsdlkf kldsajflkfsadkjlklfadlskk lkadsfjklklsdafladsfkjfasdjkkkjdfsa lkajskdfljklasd lkfjalsdkjf lkajsdlkf </p>
-      </div>
-
     </div>
   )
 }
