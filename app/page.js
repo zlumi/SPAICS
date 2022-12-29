@@ -16,11 +16,13 @@ export default function Home() {
 
   const gallaryImgIDs = [
     "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
     "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
     "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
     "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
   ]
 
   return (
@@ -50,7 +52,7 @@ export default function Home() {
 
         .photobooth div {
           margin: 0.25vw;
-          background: #152238;
+          background: #DAD2D8;
           border-radius: 3rem;
 
           width: 22vw;
@@ -121,7 +123,7 @@ export default function Home() {
       </div> {/* images */}
 
       <div style={{ position:"relative" }}>
-      <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
+        <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
         <div className="photobooth" style={{ transform:"translateY(-30vh)" }}>
           {gallaryImgIDs.map((id, index) => (
             <div key={index}>
