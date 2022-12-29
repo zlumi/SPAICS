@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&family=Nunito+Sans:wght@400&family=Poppins:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&family=Hanken+Grotesk:wght@800&family=Nunito+Sans:wght@400&family=Poppins:wght@800&display=swap');
 
 body {
     margin: 0;
@@ -45,7 +45,6 @@ footer .panel {
 }
 
 footer .panel a {
-    color: #DAD2D8;
     text-decoration: none;
     text-align: center;
     width: 20vw;
@@ -56,8 +55,23 @@ footer .panel a img {
     margin: 0 2vw;
 }
 
-h1 { margin: 0; font-size: 2rem; font-family: "Poppins"; }
-p { font-size: 1rem; }
+footer a {
+    color: #70C1B3;
+    text-decoration: none;
+}
+
+a {
+    color: #DAD2D8; text-decoration: none; font-weight: 800; transition: .5s;
+    background: linear-gradient(90deg, #DAD2D8 0%, #DAD2D8 50%, rgb(0,150,255) 50%, rgb(0,212,255) 100%);
+    background-size: 200%; background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-position: 0% center;
+}
+a:hover {
+    background-position: -100% center;
+}
+
+h1 { margin: 0; font-size: 2rem; font-family: "Poppins"; padding: 2.5vh 0; }
+p { font-size: 1.2rem; }
 
 path {
     fill: none;

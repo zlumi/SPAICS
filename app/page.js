@@ -4,14 +4,13 @@ import Image from "next/image"
 import bg1 from "./assets/backgrounds/1.png"
 import RightVertConnector from "./components/home-components/rightvertconn";
 import DrawnLogo from "./components/home-components/drawnlogo";
+import './homeStyles.css'
 
 import { useEffect } from "react"
 
 export default function Home() {
   useEffect(() => {
-    window.BeforeUnloadEvent = () => {
-      window.scrollTo(0, 0)
-    }
+    window.history.scrollRestoration = 'manual'
   }, []);
 
   const gallaryImgIDs = [
@@ -27,66 +26,6 @@ export default function Home() {
 
   return (
     <div style={{ position:"relative" }}>
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from { opacity:0; }
-          to { opacity:1; }
-        }
-
-        @keyframes shine {
-          0% { background-position: 150% center; opacity:0; }
-          50% { background-position: 150% center; }
-          100% { background-position: -80% center; opacity:1; }
-        }
-
-        .photobooth {
-          height: 100%;
-          max-width: 45vw;
-          margin: 2.5%;
-          position: absolute;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          overflow: hidden;
-        }
-
-        .photobooth div {
-          margin: 0.25vw;
-          background: #DAD2D8;
-          border-radius: 3rem;
-
-          width: 22vw;
-          min-width: 180px;
-
-          max-width: 44.5vw;
-          max-height: 100%;
-          overflow: hidden;
-          position: relative;
-
-          transition: transform 0.2s ease-in-out;
-        }
-
-        .photobooth div:hover {
-          cursor: pointer;
-          transform: scale(1.05);
-        }
-
-        .photobooth div img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .right {
-          padding: 3rem 0;
-          position: relative;
-          left: 75%;
-          max-width: 45vw;
-          text-align: center;
-          transform: translateX(-50%);
-        }
-      `}</style> {/* local stylesheet */}
-
       <div style={{
         backgroundPosition:"150% center",
         background:`linear-gradient(
@@ -124,7 +63,7 @@ export default function Home() {
 
       <div style={{ position:"relative" }}>
         <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
-        <div className="photobooth" style={{ transform:"translateY(-30vh)" }}>
+        <div className="photobooth" style={{ transform:"translateY(-20vh)" }}>
           {gallaryImgIDs.map((id, index) => (
             <div key={index}>
               <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
@@ -132,23 +71,24 @@ export default function Home() {
           ))}
         </div>
         <div className="right" style={{ paddingTop:0 }}>
-          <h1>HHHHHHHH</h1>
-          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd</p>
+          <h1>The Journey of a Thousand Lightyears Begins with one Step</h1>
+          <p>
+            Planetary exploration, technological development, cutting-edge innovation all seem so distant, so detachted from reality; but we are here to change that. Two teams, one goal: bring the future to the present.
+          </p>
         </div>
         <RightVertConnector />
         <div className="right">
-          <h1>HHHHHHHH</h1>
-          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
+          <h1>On that Pursuit of Innovation</h1>
+          <p>
+            As challengers in the annual <a href="https://www.esa.int/Education/CanSat" target="_blank" rel="noreferrer">CanSat competition</a> and directly under the oversight of the <a href="https://www.esa.int" target="_blank" rel="noreferrer">European Space Agency</a>. Bureaus of the <a href="https://dare.tudelft.nl/projects/cansat" target="_blank" rel="noreferrer">Delft Aerospace Rocket Engineering</a> of the TU Delft will also be in collaboration with us to bring our dreams to the skies
+          </p>
         </div>
         <RightVertConnector />
         <div className="right">
-          <h1>HHHHHHHH</h1>
-          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
-        </div>
-        <RightVertConnector />
-        <div className="right">
-          <h1>HHHHHHHH</h1>
-          <p>What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasdWhat a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld fkljasd What a sdflaksdflkajksld laksdklflkasdlkfklj ajklsdklflk aklsdkjfklj laksdlkflkaskjld</p>
+          <h1>Go fast, but still Far</h1>
+          <p>
+            As students of the <a href="https://ibo.org">International Bacalaureate</a> from <a href="https://aics.espritscholen.nl">AICS</a>, our uniqueness lies in our particular discipline, creativity, and most importantly, passion. We composite specialization and teamwork to bring engineering and sciences to the next level.
+          </p>
         </div>
       </div>
     </div>

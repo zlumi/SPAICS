@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { motion } from "framer-motion";
-
 export default async function Footer() {
     return (
         <footer>
@@ -19,8 +17,8 @@ export default async function Footer() {
                 </div>
                 <a href="/teams/project-aaer">Project AAER</a>
             </div>
-            <p>©SPAICS 2022-2023</p>
-            <p>MIT License</p>
+            <p><a href="mailto:spaics@aics.espritscholen.nl">©SPAICS 2022-2023</a></p>
+            <p>Website under the <a href="https://en.wikipedia.org/wiki/MIT_License">MIT License</a> (Source Repository on Github Below)</p>
             <div className="panel">
                 <a href="https://github.com/zLuminate/SPAICS" target="_blank" rel="noreferrer">
                     <img
