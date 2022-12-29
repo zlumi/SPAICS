@@ -10,7 +10,7 @@
 }
 
 .photobooth {
-    height: 100%;
+    max-height: 100%;
     max-width: 45vw;
     margin: 2.5%;
     position: absolute;
@@ -21,24 +21,20 @@
 }
 
 .photobooth div {
-    margin: 0.25vw;
-    background: #DAD2D8;
-    border-radius: 3rem;
-
-    width: 22vw;
+    width: 21vw;
     min-width: 180px;
-
     max-width: 44.5vw;
     max-height: 100%;
     overflow: hidden;
     position: relative;
-
     transition: transform 0.2s ease-in-out;
 }
 
-.photobooth div:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+.photobooth .photo {
+    margin: 0.5vw;
+    padding: 0;
+    background: #DAD2D8;
+    border-radius: 3rem;
 }
 
 .photobooth div img {

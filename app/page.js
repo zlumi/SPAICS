@@ -8,23 +8,32 @@ import './homeStyles.css'
 
 import { useEffect } from "react"
 
+import { ParallaxProvider } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
+
 export default function Home() {
   useEffect(() => {
     window.history.scrollRestoration = 'manual'
   }, []);
 
-  const gallaryImgIDs = [
+  const gallaryImgIDs_col1 = [
     "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+  ]
+
+  const gallaryImgIDs_col2 = [
     "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
     "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
     "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
     "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
   ]
 
   return (
+    <ParallaxProvider>
     <div style={{ position:"relative" }}>
       <div style={{
         backgroundPosition:"150% center",
@@ -62,14 +71,24 @@ export default function Home() {
       </div> {/* images */}
 
       <div style={{ position:"relative" }}>
-        <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
-        <div className="photobooth" style={{ transform:"translateY(-20vh)" }}>
-          {gallaryImgIDs.map((id, index) => (
-            <div key={index}>
-              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
-            </div>
-          ))}
+        <div className="photobooth">
+          <Parallax speed={-20}>
+            {gallaryImgIDs_col1.map((id, index) => (
+              <div className="photo" key={index}>
+                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              </div>
+            ))}
+          </Parallax>
+          <Parallax speed={-50}>
+            {gallaryImgIDs_col2.map((id, index) => (
+              <div className="photo" key={index}>
+                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              </div>
+            ))}
+          </Parallax>
         </div>
+
+        <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
         <div className="right" style={{ paddingTop:0 }}>
           <h1>The Journey of a Thousand Lightyears Begins with one Step</h1>
           <p>
@@ -92,6 +111,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </ParallaxProvider>
   )
 }
 
