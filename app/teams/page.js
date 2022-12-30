@@ -1,7 +1,9 @@
-export default async function TeamsPage() {
-    return (
-        <div>
-        <h1>Teams</h1>
-        </div>
-    )
+'use client'
+
+import { useEffect } from "react";
+
+export default function TeamsPage() {
+    useEffect(() => {
+        window.location.href = "./";
+    }, []);
 }

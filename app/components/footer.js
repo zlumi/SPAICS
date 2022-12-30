@@ -2,10 +2,10 @@
 
 export default async function Footer() {
     return (
-        <footer>
+        <footer id="contact">
             <div className="panel" style={{ fontFamily:"Poppins" }}>
                 <a href="/teams/inertia">Inertia</a>
-                <div style={{ 
+                <div style={{
                     background:"linear-gradient(90deg, rgb(0,212,255) 0%, rgb(48,64,192) 100%)",
                     backgroundClip:"text", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"
                  }}>
@@ -38,6 +38,12 @@ export default async function Footer() {
                     <img
                         src={ "https://drive.google.com/uc?export=view&id=1_mSf272M6HWDqXngIpFDXMCJgc4RsbIP" }
                         alt="SPAICS TikTok" style={{ scale:"1.375" }}
+                    />
+                </a>
+                <a href="mailto:spaics@aics.espritscholen.nl" target="_blank" rel="noreferrer">
+                    <img
+                        src={ "https://drive.google.com/uc?export=view&id=1M1Ue4DSuX11qgFwS7VMUqcsyQ__qAzI8" }
+                        alt="SPAICS Email"
                     />
                 </a>
             </div>

@@ -11,16 +11,12 @@ import Image from "next/image"
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import GradientH1 from "./components/home-components/gradient-heading";
+import { useEffect } from "react";
 
 export default function Home() {
-  // useEffect(() => {
-  //   window.history.scrollRestoration = 'manual'
-  // }, []);
-
-  // endDrag is called when the user releases the scrollbar
-  function endDrag(event) {
-    isDragging = false;
-  }
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, []);
 
   const gallaryImgIDs_col1 = [
     "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
@@ -117,7 +113,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container" id="teams" style={{  }}>
         <div className="team1" onClick={() => window.location.href = "/teams/inertia" }>
           <div className="center">
           <h1>Team I · Inertia</h1>
@@ -208,8 +204,8 @@ export default function Home() {
       <div style={{ minHeight:"50vh", padding:"10vh 0", textAlign:"center" }}>
         <h1>Want to know More?</h1>
         <img src={ "https://drive.google.com/uc?export=view&id=1-vBrrFCIrNFedbToIUhim1CU5gmrOOSk" } alt="logo" style={{ width:"20vw" }}/>
-        <div className="container" style={{ padding:0, width:"60vw", left:"50%", transform:"translateX(-50%)", position:"absolute" }}>
-          <div style={{ padding:0 }}><a>Teams Statuses</a></div>
+        <div className="container" style={{ padding:0, width:"60vw", left:"50%", transform:"translateX(-50%)", position:"absolute", alignItems:"center" }}>
+          <div style={{ padding:0 }}><a href="#teams">Teams Statuses</a></div>
           <div style={{ padding:0 }}><a>Our History</a></div>
           <div style={{ padding:0 }}><a>Our Contact Info</a></div>
         </div>
