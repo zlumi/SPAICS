@@ -117,21 +117,21 @@
 }
 
 .sponsor img {
-    max-width: 15rem;
+    max-width: 15vw;
     background: linear-gradient(225deg, #EFEBF1 0%, #A6A6A6 100%);
     border: black 0.5rem solid;
     border-radius: 3rem;
 }
 
 .supporter img {
-    max-width: 10rem;
+    max-width: 10vw;
     background-color: #DAD2D8;
     border: beige 0.5rem solid;
     border-radius: 3rem;
 }
 
 .mentor img {
-    max-width: 20rem;
+    max-width: 20vw;
 }
 
 .mentor p {

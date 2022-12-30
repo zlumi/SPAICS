@@ -139,7 +139,7 @@ export default function Home() {
       <div style={{ backgroundColor:"rgb(21,21,21)" }}>
 
         <div className="container" style={{ paddingBottom:0 }}>
-          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, red 0%, blue 50%, #DAD2D8 100%)"}}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, purple 0%, aqua 50%, #DAD2D8 100%)"}}>
             Our Sponsors
           </GradientH1>
         </div>
@@ -163,7 +163,7 @@ export default function Home() {
         </div>
 
         <div className="container" style={{ padding:0 }}>
-          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, yellow 0%, red 50%, #DAD2D8 75%)"}}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, darkred 0%, red 50%, #DAD2D8 75%)"}}>
             Supporters
           </GradientH1>
         </div>
@@ -183,7 +183,7 @@ export default function Home() {
         </div>
 
         <div className="container" style={{ padding:0 }}>
-          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, blue 0%, aqua 50%, #DAD2D8 75%)"}}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, brown 0%, gold 50%, #DAD2D8 75%)"}}>
             The Mentors
           </GradientH1>
         </div>
