@@ -3,17 +3,13 @@
 export default async function Footer() {
     return (
         <footer>
-            <a href="./">
-            <img src={ "https://drive.google.com/uc?export=view&id=1-vBrrFCIrNFedbToIUhim1CU5gmrOOSk" } 
-                alt="logo" style={{ width:"20rem", backgroundColor:"black", borderRadius:"40%" }} />
-            </a>
             <div className="panel" style={{ fontFamily:"Poppins" }}>
                 <a href="/teams/inertia">Inertia</a>
                 <div style={{ 
                     background:"linear-gradient(90deg, rgb(0,212,255) 0%, rgb(48,64,192) 100%)",
                     backgroundClip:"text", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent"
                  }}>
-                    <h1 style={{ fontSize:"2rem" }}>Teams of the CanSat Competition</h1>
+                    <a href="./"><h1 style={{ fontSize:"2rem" }}>Teams of the CanSat Competition</h1></a>
                 </div>
                 <a href="/teams/project-aaer">Project AAER</a>
             </div>

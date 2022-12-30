@@ -13,7 +13,7 @@ export default function RightVertConnector({ style }) {
         animation.start({
             pathLength: 1.05,
             transition: {
-            duration: 4
+                duration: 4
             }
         })
         }

@@ -1,20 +1,26 @@
 'use client';
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image"
+
 import bg1 from "./assets/backgrounds/1.png"
 import RightVertConnector from "./components/home-components/rightvertconn";
 import DrawnLogo from "./components/home-components/drawnlogo";
+import Timeline from "./components/home-components/timeline";
+
 import './homeStyles.css'
-
-import { useEffect } from "react"
-
+import Image from "next/image"
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
+import GradientH1 from "./components/home-components/gradient-heading";
 
 export default function Home() {
-  useEffect(() => {
-    window.history.scrollRestoration = 'manual'
-  }, []);
+  // useEffect(() => {
+  //   window.history.scrollRestoration = 'manual'
+  // }, []);
+
+  // endDrag is called when the user releases the scrollbar
+  function endDrag(event) {
+    isDragging = false;
+  }
 
   const gallaryImgIDs_col1 = [
     "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
@@ -108,6 +114,104 @@ export default function Home() {
           <p>
             As students of the <a href="https://ibo.org">International Bacalaureate</a> from <a href="https://aics.espritscholen.nl">AICS</a>, our uniqueness lies in our particular discipline, creativity, and most importantly, passion. We composite specialization and teamwork to bring engineering and sciences to the next level.
           </p>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="team1" onClick={() => window.location.href = "/teams/inertia" }>
+          <div className="center">
+          <h1>Team I · Inertia</h1>
+          <p>Mission: Create a new Type of Technology that Enables and Ensures of a Vertical Landing</p>
+          <p>Importance in the Real World: The Proof of Concept will allow for a wide range of applications</p>
+          </div>
+        </div>
+
+        <div className="team2" onClick={() => window.location.href = "/teams/project-aaer" }>
+          <div className="center">
+          <h1>Team II · Project A.A.E.R.</h1>
+          <p>- &#34;Artificial Acceleration of Ecosystem Restoration&#34;</p>
+          <p>Mission: Artificially Assist & Speed Up the Environment to regain its state of Health</p>
+          <p>Significance: Solution to Massive Destruction Events (i.e. Floods, Forest Fires)</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <Timeline/>
+      </div>
+
+      <div style={{ backgroundColor:"rgb(21,21,21)" }}>
+
+        <div className="container" style={{ paddingBottom:0 }}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, red 0%, blue 50%, #DAD2D8 100%)"}}>
+            Our Sponsors
+          </GradientH1>
+        </div>
+        <div className="container" style={{ padding:0 }}>
+          <div className="sponsor">
+            <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="sponsor1" />
+            <p>Amsterdam International Community School</p>
+          </div>
+          <div className="sponsor">
+            <img src={ "https://drive.google.com/uc?export=view&id=1Fddsd2kW1dH0Brtpw0HqGWbymrtO8PMv" } alt="sponsor2" />
+            <p>Now you know why you should be a sponsor</p>
+          </div>
+          <div className="sponsor">
+            <img src={ "https://drive.google.com/uc?export=view&id=1Fddsd2kW1dH0Brtpw0HqGWbymrtO8PMv" } alt="sponsor2" />
+            <p>Now you know why you should be a sponsor</p>
+          </div>
+          <div className="sponsor">
+            <img src={ "https://drive.google.com/uc?export=view&id=1Fddsd2kW1dH0Brtpw0HqGWbymrtO8PMv" } alt="sponsor2" />
+            <p>Now you know why you should be a sponsor</p>
+          </div>
+        </div>
+
+        <div className="container" style={{ padding:0 }}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, yellow 0%, red 50%, #DAD2D8 75%)"}}>
+            Supporters
+          </GradientH1>
+        </div>
+        <div className="container" style={{ paddingTop:0 }}>
+          <div className="supporter">
+            <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="supporter1" />
+            <p>Amsterdam International Community School</p>
+          </div>
+          <div className="supporter">
+            <img src={ "https://drive.google.com/uc?export=view&id=1-ijwidEOF1YFLUlCKnrYMpqq6YcN3kl1" } alt="supporter2" />
+            <p>European Space Agency</p>
+          </div>
+          <div className="supporter">
+            <img src={ "https://drive.google.com/uc?export=view&id=1_rvNyrdg-YAPzqxJ3_s8X-9UO5rtFUKT" } alt="supporter3" />
+            <p>Delft Aerospace Rocket Engineering</p>
+          </div>
+        </div>
+
+        <div className="container" style={{ padding:0 }}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, blue 0%, aqua 50%, #DAD2D8 75%)"}}>
+            The Mentors
+          </GradientH1>
+        </div>
+        <div className="container" style={{ paddingTop:0 }}>
+
+          <div className="mentor">
+            <img src={ "https://drive.google.com/uc?export=view&id=1r7BSCPSf_49JeYB9tz7Pa50UkZ1vxJhq" } alt="mentor1" />
+            <p>Mr Matt Decovsky</p>
+          </div>
+          <div className="mentor">
+            <img src={ "https://drive.google.com/uc?export=view&id=1mLy2VEFEPRmKjau9XULp-BX-DzPTke9a" } alt="mentor2" />
+            <p>Grayson Hoare</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div style={{ minHeight:"50vh", padding:"10vh 0", textAlign:"center" }}>
+        <h1>Want to know More?</h1>
+        <img src={ "https://drive.google.com/uc?export=view&id=1-vBrrFCIrNFedbToIUhim1CU5gmrOOSk" } alt="logo" style={{ width:"20vw" }}/>
+        <div className="container" style={{ padding:0, width:"60vw", left:"50%", transform:"translateX(-50%)", position:"absolute" }}>
+          <div style={{ padding:0 }}><a>Teams Statuses</a></div>
+          <div style={{ padding:0 }}><a>Our History</a></div>
+          <div style={{ padding:0 }}><a>Our Contact Info</a></div>
         </div>
       </div>
     </div>
