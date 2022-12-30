@@ -206,8 +206,8 @@ export default function Home() {
         <img src={ "https://drive.google.com/uc?export=view&id=1-vBrrFCIrNFedbToIUhim1CU5gmrOOSk" } alt="logo" style={{ width:"20vw" }}/>
         <div className="container" style={{ padding:0, width:"60vw", left:"50%", transform:"translateX(-50%)", position:"absolute", alignItems:"center" }}>
           <div style={{ padding:0 }}><a href="#teams">Teams Statuses</a></div>
-          <div style={{ padding:0 }}><a>Our History</a></div>
-          <div style={{ padding:0 }}><a>Our Contact Info</a></div>
+          <div style={{ padding:0 }}><a href="/legacy">Our History</a></div>
+          <div style={{ padding:0 }}><a href="#contact">Our Contact Info</a></div>
         </div>
       </div>
     </div>
