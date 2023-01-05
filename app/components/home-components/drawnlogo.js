@@ -15,7 +15,14 @@ export default function DrawnLogo() {
         <div onError={(event) => event.target.style.display = 'none'} />
   
         {showGif ? (
-          <Image src={logo_drawn} alt="logo" fill priority onEnded={() => setShowGif(false)} />
+          <Image
+            src={logo_drawn}
+            alt="logo"
+            fill
+            priority
+            onEnded={() => setShowGif(false)}
+            sizes
+          />
         ) : (
           <button onClick={() => setShowGif(true)}>Show GIF</button>
         )}

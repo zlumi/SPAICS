@@ -19,6 +19,7 @@
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.1",
     "react-scroll-parallax": "^3.3.2",
-    "react-viewport-utils": "^2.0.2"
+    "react-viewport-utils": "^2.0.2",
+    "sharp": "^0.31.3"
   }
 }

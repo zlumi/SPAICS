@@ -11,21 +11,9 @@ import Image from "next/image"
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import GradientH1 from "./components/home-components/gradient-heading";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height
-  };
-}
-
-export default function Home() {
-  useEffect(() => {
-    window.history.scrollRestoration = 'manual'
-  }, []);
-
+function Photobooth() {
   const gallaryImgIDs_col1 = [
     "1qbIKmxV-mTcsYhNLWQhjay16jMR7fn1S",
     "1oZcow2RTckko4AKfLAHyw6sBjGFFtT5x",
@@ -38,41 +26,54 @@ export default function Home() {
     "11lMDA8ueORbCjOSLb8TGbl55xKF9FOjA"
   ]
 
-  function Photobooth() {
-    var { width, height } = getWindowDimensions();
-    if (width > height) {
-      return (
-        <div className="photobooth">
-          <Parallax speed={-10}>
-            {gallaryImgIDs_col1.map((id, index) => (
-              <div className="photo" key={index}>
-                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
-              </div>
-            ))}
-          </Parallax>
-          <Parallax speed={-20}>
-            {gallaryImgIDs_col2.map((id, index) => (
-              <div className="photo" key={index}>
-                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
-              </div>
-            ))}
-          </Parallax>
-        </div>
-      )
-    } else {
-      return (
-        <div className="photobooth">
-          <Parallax speed={-10}>
-            {gallaryImgIDs_col1.concat(gallaryImgIDs_col2).map((id, index) => (
-              <div className="photo" key={index}>
-                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
-              </div>
-            ))}
-          </Parallax>
-        </div>
-      )
-    }
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    setWidth(width);
+    setHeight(height);
+  }, []);
+
+  if (width > height) {
+    return (
+      <div className="photobooth">
+        <Parallax speed={-10}>
+          {gallaryImgIDs_col1.map((id, index) => (
+            <div className="photo" key={index}>
+              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+            </div>
+          ))}
+        </Parallax>
+        <Parallax speed={-20}>
+          {gallaryImgIDs_col2.map((id, index) => (
+            <div className="photo" key={index}>
+              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+            </div>
+          ))}
+        </Parallax>
+      </div>
+    )
+  } else {
+    return (
+      <div className="photobooth">
+        <Parallax speed={-10}>
+          {gallaryImgIDs_col1.concat(gallaryImgIDs_col2).map((id, index) => (
+            <div className="photo" key={index}>
+              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+            </div>
+          ))}
+        </Parallax>
+      </div>
+    )
   }
+}
+
+export default function Home() {
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, []);
 
   return (
     <ParallaxProvider>
