@@ -46,3 +46,25 @@
         opacity: 1;
     }
 }
+
+#aaerContent {
+    padding: 2rem;
+}
+
+#aaerContent h1 {
+    text-align: right;
+}
+
+@media only screen and (orientation: landscape) {
+    #aaerContent {
+        display: grid;
+        grid-template-columns: 20vw auto;
+        column-gap: 2rem;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    #aaerContent {
+        display: block;
+    }
+}

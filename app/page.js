@@ -13,6 +13,14 @@ import { Parallax } from "react-scroll-parallax";
 import GradientH1 from "./components/home-components/gradient-heading";
 import { useEffect, useState } from "react";
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
 export default function Home() {
   useEffect(() => {
     window.history.scrollRestoration = 'manual'
@@ -31,10 +39,8 @@ export default function Home() {
   ]
 
   function Photobooth() {
-    const [width, setWidth] = useState(window.visualViewport.width)
-    const [height, setHeight] = useState(window.visualViewport.height)
-
-    if (height < width) {
+    var { width, height } = getWindowDimensions();
+    if (width > height) {
       return (
         <div className="photobooth">
           <Parallax speed={-10}>
