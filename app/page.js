@@ -11,7 +11,7 @@ import Image from "next/image"
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import GradientH1 from "./components/home-components/gradient-heading";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -19,20 +19,54 @@ export default function Home() {
   }, []);
 
   const gallaryImgIDs_col1 = [
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
-    "1DZlz_gPQQXJpmm0i3eVG1_ez8f7g2IFt",
+    "1qbIKmxV-mTcsYhNLWQhjay16jMR7fn1S",
+    "1oZcow2RTckko4AKfLAHyw6sBjGFFtT5x",
+    "1Qiy6LUy9bAVGCnQGQn6cR_oUfj5HKrT0"
   ]
 
   const gallaryImgIDs_col2 = [
-    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
-    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
-    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
-    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
-    "1BdlWrTQ6ukeWT95TZM5KaCSGPDNkE4X0",
+    "1Q1mk4uk_bi5TkmzapC3DPx7QOgjpeUBU",
+    "1OHjdO4sqVo9N9bnRlXDbIOfBfoqPwFMa",
+    "11lMDA8ueORbCjOSLb8TGbl55xKF9FOjA"
   ]
+
+  function Photobooth() {
+    const [width, setWidth] = useState(window.visualViewport.width)
+    const [height, setHeight] = useState(window.visualViewport.height)
+
+    if (height < width) {
+      return (
+        <div className="photobooth">
+          <Parallax speed={-10}>
+            {gallaryImgIDs_col1.map((id, index) => (
+              <div className="photo" key={index}>
+                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              </div>
+            ))}
+          </Parallax>
+          <Parallax speed={-20}>
+            {gallaryImgIDs_col2.map((id, index) => (
+              <div className="photo" key={index}>
+                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              </div>
+            ))}
+          </Parallax>
+        </div>
+      )
+    } else {
+      return (
+        <div className="photobooth">
+          <Parallax speed={-10}>
+            {gallaryImgIDs_col1.concat(gallaryImgIDs_col2).map((id, index) => (
+              <div className="photo" key={index}>
+                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              </div>
+            ))}
+          </Parallax>
+        </div>
+      )
+    }
+  }
 
   return (
     <ParallaxProvider>
@@ -73,23 +107,7 @@ export default function Home() {
       </div> {/* images */}
 
       <div style={{ position:"relative" }}>
-        <div className="photobooth">
-          <Parallax speed={-20}>
-            {gallaryImgIDs_col1.map((id, index) => (
-              <div className="photo" key={index}>
-                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
-              </div>
-            ))}
-          </Parallax>
-          <Parallax speed={-50}>
-            {gallaryImgIDs_col2.map((id, index) => (
-              <div className="photo" key={index}>
-                <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
-              </div>
-            ))}
-          </Parallax>
-        </div>
-
+        <Photobooth />
         <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
         <div className="right" style={{ paddingTop:0 }}>
           <h1>The Journey of a Thousand Lightyears Begins with one Step</h1>
@@ -113,9 +131,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container" id="teams" style={{  }}>
+      <div className="container" id="teams">
         <div className="team1" onClick={() => window.location.href = "/teams/inertia" }>
-          <div className="center">
+          <div className="center" style={{ transform:"translate(-50%, -50%)" }}>
           <h1>Team I · Inertia</h1>
           <p>Mission: Create a new Type of Technology that Enables and Ensures of a Vertical Landing</p>
           <p>Importance in the Real World: The Proof of Concept will allow for a wide range of applications</p>
@@ -123,7 +141,7 @@ export default function Home() {
         </div>
 
         <div className="team2" onClick={() => window.location.href = "/teams/project-aaer" }>
-          <div className="center">
+          <div className="center" style={{ transform:"translate(-50%, -50%)" }}>
           <h1>Team II · Project A.A.E.R.</h1>
           <p>- &#34;Artificial Acceleration of Ecosystem Restoration&#34;</p>
           <p>Mission: Artificially Assist & Speed Up the Environment to regain its state of Health</p>
@@ -147,18 +165,6 @@ export default function Home() {
           <div className="sponsor">
             <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="sponsor1" />
             <p>Amsterdam International Community School</p>
-          </div>
-          <div className="sponsor">
-            <img src={ "https://drive.google.com/uc?export=view&id=1Fddsd2kW1dH0Brtpw0HqGWbymrtO8PMv" } alt="sponsor2" />
-            <p>Now you know why you should be a sponsor</p>
-          </div>
-          <div className="sponsor">
-            <img src={ "https://drive.google.com/uc?export=view&id=1Fddsd2kW1dH0Brtpw0HqGWbymrtO8PMv" } alt="sponsor2" />
-            <p>Now you know why you should be a sponsor</p>
-          </div>
-          <div className="sponsor">
-            <img src={ "https://drive.google.com/uc?export=view&id=1Fddsd2kW1dH0Brtpw0HqGWbymrtO8PMv" } alt="sponsor2" />
-            <p>Now you know why you should be a sponsor</p>
           </div>
         </div>
 
