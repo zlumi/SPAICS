@@ -24,7 +24,7 @@ export default function DrawnLogo() {
             sizes
           />
         ) : (
-          <button onClick={() => setShowGif(true)}>Show GIF</button>
+          <button onClick={() => setShowGif(true)} style={{ display:"none" }}>Show GIF</button>
         )}
       </div>
     )

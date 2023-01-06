@@ -12,18 +12,21 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import GradientH1 from "./components/home-components/gradient-heading";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 function Photobooth() {
   const gallaryImgIDs_col1 = [
     "1qbIKmxV-mTcsYhNLWQhjay16jMR7fn1S",
     "1oZcow2RTckko4AKfLAHyw6sBjGFFtT5x",
-    "1Qiy6LUy9bAVGCnQGQn6cR_oUfj5HKrT0"
+    "1Qiy6LUy9bAVGCnQGQn6cR_oUfj5HKrT0",
+    "1t4Ph3WN1wczOn3PmakHEPtFkire1ufQa"
   ]
 
   const gallaryImgIDs_col2 = [
     "1Q1mk4uk_bi5TkmzapC3DPx7QOgjpeUBU",
     "1OHjdO4sqVo9N9bnRlXDbIOfBfoqPwFMa",
-    "11lMDA8ueORbCjOSLb8TGbl55xKF9FOjA"
+    "11lMDA8ueORbCjOSLb8TGbl55xKF9FOjA",
+    "1Ad3iGDHcNpjYSeTqoFI9CvOiNUxmUCwx"
   ]
 
   const [width, setWidth] = useState(0);
@@ -138,22 +141,109 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container" id="teams">
-        <div className="team1" onClick={() => window.location.href = "/teams/inertia" }>
-          <div className="center" style={{ transform:"translate(-50%, -50%)" }}>
+      <div id="teams">
+        <div id="team1" onClick={() => window.location.href = "/teams/inertia" }>
           <h1>Team I · Inertia</h1>
           <p>Mission: Create a new Type of Technology that Enables and Ensures of a Vertical Landing</p>
           <p>Importance in the Real World: The Proof of Concept will allow for a wide range of applications</p>
-          </div>
         </div>
 
-        <div className="team2" onClick={() => window.location.href = "/teams/project-aaer" }>
-          <div className="center" style={{ transform:"translate(-50%, -50%)" }}>
+        <div id="team2" onClick={() => window.location.href = "/teams/project-aaer" }>
           <h1>Team II · Project A.A.E.R.</h1>
           <p>- &#34;Artificial Acceleration of Ecosystem Restoration&#34;</p>
           <p>Mission: Artificially Assist & Speed Up the Environment to regain its state of Health</p>
-          <p>Significance: Solution to Massive Destruction Events (i.e. Floods, Forest Fires)</p>
-          </div>
+          <p>Significance: Solution to Massive Destruction Events (Floods, Forest Fires)</p>
+        </div>
+      </div>
+
+      <div style={{ textAlign:"center", padding:"0 10vw" }}>
+        <h1>The CanSat Competition</h1>
+        <p>The challenge brings 6 students per team to think critically and creatively as we work to design and build a model Satelite in the mere size of a soda drink can. Each team projects their unique mission while the simulation of a real space launch is undergone for the final test. The 2 teams of the AICS are structured by roles of expertise, producing the next generation of innovation and ingenuiy.</p>
+
+        <div className="container" id="team-members" style={{ paddingLeft:"1vw", paddingRight:"1vw" }}>
+          <Parallax speed={7.5} style={{ maxWidth:"24.5vw" }}>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1O3-uG6OyX-04vf_DXUe9wAlHL-y-6Fmv" } alt="" />
+              <p>Gonçalo Lopes Madeira Lau - Inertia Body Design I</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1BMIO4OVuQArv9Rf8zMysRqxwNqNsiIIT" } alt="" />
+              <p>Abhishek Pillai - Inertia Software & Hardware I</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1ljw5LstGmDbnF-1jHA0iDZ75Nht2QZvR" } alt="" />
+              <p>Henry Harrison - Inertia Software & Hardware II</p>
+            </div>
+          </Parallax>
+          <Parallax speed={-5} style={{ maxWidth:"24.5vw" }}>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1-J5MGEz_s_XHs2T_ud2SJJNr4m-bKbbh" } alt="" />
+              <p>Matei Rusu - Inertia Body Design II</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1yeV6mh4d8Yxsv0wnmSxbeoJupAwZfZAN" } alt="" />
+              <p>Olive Webster - Inertia Recovery</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1QPCsFfU5Pi5FNDgQR7bqgIt5LN6PuwUH" } alt="" />
+              <p>Ayeesha Worgan - Inertia Public Relations</p>
+            </div>
+          </Parallax>
+          <Parallax speed={2.5} style={{ maxWidth:"24.5vw" }}>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1HszQ2AAU4gsxQXlL7NyGBSoC0xxxQLx3" } alt="" />
+              <p>Louis Amado - AAER Body Design I</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=19c5p7aFZllcbWHXaFOYFe7sTNWe_6ZP5" } alt="" />
+              <p>Rishabh Kurup - AAER Software & Hardware I</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1TpOcjGNM3rPEY9vIzU5nvpljO5V9Lr2e" } alt="" />
+              <p>Eklavya Kukreja - AAER Software & Hardware II</p>
+            </div>
+          </Parallax>
+          <Parallax speed={-10} style={{ maxWidth:"24.5vw" }}>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1OmxoQVHulbyZy03O9lUWibHP6y1Uv5B5" } alt="" />
+              <p>Daksh Bhalla - AAER Body Design II</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1BOB2slaBulYK2BprW1YiB6a1SeLtBTt3" } alt="" />
+              <p>Palmis Yahoo - AAER Recovery</p>
+            </div>
+            <div className="member">
+              <img src={ "https://drive.google.com/uc?export=view&id=1I2OwdZDNOjTeTJdmOo9N5Zz6sk9ZkixA" } alt="" />
+              <p>Hank Zhong - AAER Public Relations; Software</p>
+            </div>
+          </Parallax>
+        </div>
+      </div>
+
+      <div className="container" style={{ textAlign:"center", paddingLeft:"5vw", paddingRight:"5vw", paddingBottom:0 }}>
+        <div style={{ overflow:"hidden" }}>
+          <motion.div>
+            <div>
+              <h2>Software & Hardware</h2>
+              <p>The architects of electronics, linking & programming the components, communicators, circuits</p>
+            </div>
+            <div>
+              <h2>Recovery</h2>
+              <p>The safety ensurers of the CanSat, prepares the vessle for its fall from 1km high with minimal harm</p>
+            </div>
+          </motion.div>
+        </div>
+        <div style={{ overflow:"hidden" }}>
+          <motion.div>
+            <div>
+              <h2>Body Design</h2>
+              <p>The creators for the protective shell of the mission&apos;s pieces, takes on the task of protecting all within</p>
+            </div>
+            <div>
+              <h2>Public Relations</h2>
+              <p>Documenting the process of creation, share the fruits of innovation with the world</p>
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -165,7 +255,7 @@ export default function Home() {
 
         <div className="container" style={{ paddingBottom:0 }}>
           <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, purple 0%, aqua 50%, #DAD2D8 100%)"}}>
-            Our Sponsors
+            Sponsors
           </GradientH1>
         </div>
         <div className="container" style={{ padding:0 }}>
@@ -196,21 +286,21 @@ export default function Home() {
         </div>
 
         <div className="container" style={{ padding:0 }}>
-          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, brown 0%, gold 50%, #DAD2D8 75%)"}}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg,brown 0%,gold 50%, #DAD2D8 75%)"}}>
             The Mentors
           </GradientH1>
         </div>
         <div className="container" style={{ paddingTop:0 }}>
-
-          <div className="mentor">
-            <img src={ "https://drive.google.com/uc?export=view&id=1r7BSCPSf_49JeYB9tz7Pa50UkZ1vxJhq" } alt="mentor1" />
-            <p>Mr Matt Decovsky</p>
+          <div className="container" style={{ maxWidth:"60rem" }}>
+            <div className="mentor">
+              <img src={ "https://drive.google.com/uc?export=view&id=1177HByDiOIzYkaACDJvmSg2axmqkpfDu" } alt="mentor1" />
+              <p>Mr Matt Decovsky</p>
+            </div>
+            <div className="mentor">
+              <img src={ "https://drive.google.com/uc?export=view&id=1RseO_Eukc3giP_r9o229ZkmYmiikBG9A" } alt="mentor2" />
+              <p>Grayson Hoare</p>
+            </div>
           </div>
-          <div className="mentor">
-            <img src={ "https://drive.google.com/uc?export=view&id=1mLy2VEFEPRmKjau9XULp-BX-DzPTke9a" } alt="mentor2" />
-            <p>Grayson Hoare</p>
-          </div>
-
         </div>
       </div>
 

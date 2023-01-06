@@ -81,25 +81,6 @@
     border: 0;
 }
 
-.team1{
-    border: #E365C1 0 solid;
-    background: linear-gradient(45deg, rgb(150, 0, 150) 0%, rgb(18, 13, 10) 50%);
-}
-
-.team2{
-    border: #8AEA92 0 solid;
-    background: linear-gradient(225deg, rgb(0, 150, 0) 0%, rgb(18, 13, 10) 50%);
-}
-
-.team1, .team2 {
-    transition: .5s;
-}
-
-.team1:hover, .team2:hover {
-    border-width: .5rem;
-    cursor: pointer;
-}
-
 .timeline {
     max-height: 80vh;
 }
@@ -135,5 +116,63 @@
 
 .mentor p {
     font-size: 1.5rem;
-    color: gold;
+    color: white;
+}
+
+#teams {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: black;
+}
+
+#teams p {
+    font-size: 1rem;
+    margin: .3rem;
+}
+
+#teams div {
+    flex: 1;
+    height: 50vh;
+    margin: 20vh 0;
+    padding: 2.5vh 8vw;
+    transition: .5s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#team1 {
+    background: linear-gradient(225deg, #EFEBF1 0%, #A6A6A6 100%);
+    border: white 0rem solid;
+}
+
+#team2 {
+    background: linear-gradient(225deg, #DAD2D8 0%, #A6A6A6 100%);
+    border: white 0rem solid;
+}
+
+#team1:hover, #team2:hover {
+    border-width: 1rem;
+    cursor: pointer;
+}
+
+#team-members {
+    padding-top: 20vh;
+}
+
+#team-members img {
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+    filter: grayscale(100%);
+}
+
+#team-members p {
+    font-size: 1rem;
+}
+
+#team-members .member:hover img {
+    filter: grayscale(0%);
 }
