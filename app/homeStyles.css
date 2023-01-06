@@ -9,18 +9,16 @@
     100% { background-position: -80% center; opacity:1; }
 }
 
-.photobooth {
-    max-height: 95%;
+#photobooth {
     max-width: 45vw;
-    margin: 2.5%;
-    position: absolute;
+    margin: 5vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
 }
 
-.photobooth div {
+#photobooth div {
     width: 21vw;
     min-width: 180px;
     max-width: 44.5vw;
@@ -30,13 +28,13 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.photobooth .photo {
+#photobooth .photo {
     margin: 0.5vw;
     padding: 0;
     border-radius: 3rem;
 }
 
-.photobooth div img {
+#photobooth div img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -44,10 +42,10 @@
 
 .right {
     position: relative;
-    left: 75%;
-    max-width: 45vw;
+    max-width: 50vw;
     text-align: center;
-    transform: translate(-50%, -10vh);
+    padding: 2.5%;
+    transform: translateY(-10vh);
 }
 
 .right h1 {
@@ -133,7 +131,6 @@
 
 #teams div {
     flex: 1;
-    height: 50vh;
     margin: 20vh 0;
     padding: 2.5vh 8vw;
     transition: .5s;

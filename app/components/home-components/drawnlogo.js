@@ -21,7 +21,6 @@ export default function DrawnLogo() {
             fill
             priority
             onEnded={() => setShowGif(false)}
-            sizes
           />
         ) : (
           <button onClick={() => setShowGif(true)} style={{ display:"none" }}>Show GIF</button>

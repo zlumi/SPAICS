@@ -8,25 +8,39 @@ import Timeline from "./components/home-components/timeline";
 
 import './homeStyles.css'
 import Image from "next/image"
+import Script from "next/script";
+import { useInView } from "react-intersection-observer";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import GradientH1 from "./components/home-components/gradient-heading";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import LeftChunk from "./components/home-components/chunkleft";
+import RightChunk from "./components/home-components/chunkright";
 
 function Photobooth() {
   const gallaryImgIDs_col1 = [
     "1qbIKmxV-mTcsYhNLWQhjay16jMR7fn1S",
     "1oZcow2RTckko4AKfLAHyw6sBjGFFtT5x",
     "1Qiy6LUy9bAVGCnQGQn6cR_oUfj5HKrT0",
-    "1t4Ph3WN1wczOn3PmakHEPtFkire1ufQa"
+    "1t4Ph3WN1wczOn3PmakHEPtFkire1ufQa",
+    
+    "1Q1mk4uk_bi5TkmzapC3DPx7QOgjpeUBU",
+    "1OHjdO4sqVo9N9bnRlXDbIOfBfoqPwFMa",
+    "11lMDA8ueORbCjOSLb8TGbl55xKF9FOjA",
+    "1Ad3iGDHcNpjYSeTqoFI9CvOiNUxmUCwx"
   ]
 
   const gallaryImgIDs_col2 = [
     "1Q1mk4uk_bi5TkmzapC3DPx7QOgjpeUBU",
     "1OHjdO4sqVo9N9bnRlXDbIOfBfoqPwFMa",
     "11lMDA8ueORbCjOSLb8TGbl55xKF9FOjA",
-    "1Ad3iGDHcNpjYSeTqoFI9CvOiNUxmUCwx"
+    "1Ad3iGDHcNpjYSeTqoFI9CvOiNUxmUCwx",
+
+    "1qbIKmxV-mTcsYhNLWQhjay16jMR7fn1S",
+    "1oZcow2RTckko4AKfLAHyw6sBjGFFtT5x",
+    "1Qiy6LUy9bAVGCnQGQn6cR_oUfj5HKrT0",
+    "1t4Ph3WN1wczOn3PmakHEPtFkire1ufQa"
   ]
 
   const [width, setWidth] = useState(0);
@@ -41,7 +55,7 @@ function Photobooth() {
 
   if (width > height) {
     return (
-      <div className="photobooth">
+      <div id="photobooth">
         <Parallax speed={-10}>
           {gallaryImgIDs_col1.map((id, index) => (
             <div className="photo" key={index}>
@@ -60,7 +74,7 @@ function Photobooth() {
     )
   } else {
     return (
-      <div className="photobooth">
+      <div id="photobooth">
         <Parallax speed={-10}>
           {gallaryImgIDs_col1.concat(gallaryImgIDs_col2).map((id, index) => (
             <div className="photo" key={index}>
@@ -80,6 +94,16 @@ export default function Home() {
 
   return (
     <ParallaxProvider>
+    <Script id="photoboothHeightModif">
+      {`
+        const photobooth = document.getElementById("photobooth");
+        const photoboothside = document.getElementById("photobooth-side");
+
+        high = photobooth.offsetHeight-(window.innerHeight*0.1);
+    
+        photobooth.style.height = high + "px";
+      `}
+    </Script>
     <div style={{ position:"relative" }}>
       <div style={{
         backgroundPosition:"150% center",
@@ -101,7 +125,7 @@ export default function Home() {
           <br/>
           @ Amsterdam International Community School
         </p>
-      </div> {/* Name text */}
+      </div>
 
       <div style={{ width:"100vw", height:"97vh", overflow:"hidden", position:"relative" }}>
 
@@ -114,30 +138,32 @@ export default function Home() {
 
         <DrawnLogo />
 
-      </div> {/* images */}
+      </div>
 
-      <div style={{ position:"relative" }}>
-        <Photobooth />
-        <RightVertConnector style={{ transform:"translate(-50%, -50%)", padding:0 }} />
-        <div className="right" style={{ paddingTop:0 }}>
-          <h1>The Journey of a Thousand Lightyears Begins with one Step</h1>
-          <p>
-            Planetary exploration, technological development, cutting-edge innovation all seem so distant, so detachted from reality; but we are here to change that. Two teams, one goal: bring the future to the present.
-          </p>
-        </div>
-        <RightVertConnector />
-        <div className="right">
-          <h1>On that Pursuit of Innovation</h1>
-          <p>
-            As challengers in the annual <a href="https://www.esa.int/Education/CanSat" target="_blank" rel="noreferrer">CanSat competition</a> and directly under the oversight of the <a href="https://www.esa.int" target="_blank" rel="noreferrer">European Space Agency</a>. Bureaus of the <a href="https://dare.tudelft.nl/projects/cansat" target="_blank" rel="noreferrer">Delft Aerospace Rocket Engineering</a> of the TU Delft will also be in collaboration with us to bring our dreams to the skies
-          </p>
-        </div>
-        <RightVertConnector />
-        <div className="right">
-          <h1>Go fast, but still Far</h1>
-          <p>
-            As students of the <a href="https://ibo.org">International Bacalaureate</a> from <a href="https://aics.espritscholen.nl">AICS</a>, our uniqueness lies in our particular discipline, creativity, and most importantly, passion. We composite specialization and teamwork to bring engineering and sciences to the next level.
-          </p>
+      <div style={{ display:"flex", alignItems:"stretch" }}>
+        <Photobooth/>
+        <div id="photobooth-side" style={{ height:"fit-content", flex:"1" }}>
+          <RightVertConnector/>
+          <div className="right" style={{ paddingTop:0 }}>
+            <h1>The Journey of a Thousand Lightyears Begins with one Step</h1>
+            <p>
+              Planetary exploration, technological development, cutting-edge innovation all seem so distant, so detachted from reality; but we are here to change that. Two teams, one goal: bring the future to the present.
+            </p>
+          </div>
+          <RightVertConnector/>
+          <div className="right">
+            <h1>On that Pursuit of Innovation</h1>
+            <p>
+              As challengers in the annual <a href="https://www.esa.int/Education/CanSat" target="_blank" rel="noreferrer">CanSat competition</a> and directly under the oversight of the <a href="https://www.esa.int" target="_blank" rel="noreferrer">European Space Agency</a>. Bureaus of the <a href="https://dare.tudelft.nl/projects/cansat" target="_blank" rel="noreferrer">Delft Aerospace Rocket Engineering</a> of the TU Delft will also be in collaboration with us to bring our dreams to the skies
+            </p>
+          </div>
+          <RightVertConnector/>
+          <div className="right">
+            <h1>Go fast, but still Far</h1>
+            <p>
+              As students of the <a href="https://ibo.org">International Bacalaureate</a> from <a href="https://aics.espritscholen.nl">AICS</a>, our uniqueness lies in our particular discipline, creativity, and most importantly, passion. We composite specialization and teamwork to bring engineering and sciences to the next level.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -146,6 +172,7 @@ export default function Home() {
           <h1>Team I · Inertia</h1>
           <p>Mission: Create a new Type of Technology that Enables and Ensures of a Vertical Landing</p>
           <p>Importance in the Real World: The Proof of Concept will allow for a wide range of applications</p>
+          <p> </p>
         </div>
 
         <div id="team2" onClick={() => window.location.href = "/teams/project-aaer" }>
@@ -222,28 +249,10 @@ export default function Home() {
 
       <div className="container" style={{ textAlign:"center", paddingLeft:"5vw", paddingRight:"5vw", paddingBottom:0 }}>
         <div style={{ overflow:"hidden" }}>
-          <motion.div>
-            <div>
-              <h2>Software & Hardware</h2>
-              <p>The architects of electronics, linking & programming the components, communicators, circuits</p>
-            </div>
-            <div>
-              <h2>Recovery</h2>
-              <p>The safety ensurers of the CanSat, prepares the vessle for its fall from 1km high with minimal harm</p>
-            </div>
-          </motion.div>
+          <LeftChunk/>
         </div>
         <div style={{ overflow:"hidden" }}>
-          <motion.div>
-            <div>
-              <h2>Body Design</h2>
-              <p>The creators for the protective shell of the mission&apos;s pieces, takes on the task of protecting all within</p>
-            </div>
-            <div>
-              <h2>Public Relations</h2>
-              <p>Documenting the process of creation, share the fruits of innovation with the world</p>
-            </div>
-          </motion.div>
+          <RightChunk/>
         </div>
       </div>
 
