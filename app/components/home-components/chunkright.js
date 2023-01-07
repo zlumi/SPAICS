@@ -10,8 +10,6 @@ export default function RightChunk() {
     const animation = useAnimation()
 
     useEffect(() => {
-        console.log(inView)
-
         if (inView) {
             animation.start({
                 transform: "translateX(0%)",

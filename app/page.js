@@ -9,12 +9,10 @@ import Timeline from "./components/home-components/timeline";
 import './homeStyles.css'
 import Image from "next/image"
 import Script from "next/script";
-import { useInView } from "react-intersection-observer";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import GradientH1 from "./components/home-components/gradient-heading";
 import { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
 import LeftChunk from "./components/home-components/chunkleft";
 import RightChunk from "./components/home-components/chunkright";
 
