@@ -196,7 +196,7 @@ export default function Home() {
               <p>Abhishek Pillai - Inertia Software & Hardware I</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1ljw5LstGmDbnF-1jHA0iDZ75Nht2QZvR" } alt="" />
+              <img src={ "https://drive.google.com/uc?export=view&id=1Gu7DuMslzjtJ9ikuEkIijxFoNsA2kD7W" } alt="" />
               <p>Henry Harrison - Inertia Software & Hardware II</p>
             </div>
           </Parallax>

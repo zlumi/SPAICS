@@ -1,5 +1,6 @@
 'use client'
 
+import './datas.css';
 import 'firebase/compat/firestore';
 import firebase from 'firebase/compat/app';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.js';
@@ -52,14 +53,14 @@ export default function DataStreamPage() {
     return (
         <div style={{ paddingTop:"3rem" }}>
             { Object.keys(chartsDatas).map((variable) => (
-                <div key={variable} style={{ width:"48vw", display:"inline-block" }}>
+                <div key={variable} class="graphHolder">
                     <Scatter 
                         data={{ 
                             datasets: [{ 
                                 label: 'Scatter Dataset', 
                                 data: chartsDatas[variable], 
                                 backgroundColor: 'rgb(255, 99, 132)',
-                                borderColor: 'rgb(255, 99, 132)',
+                                borderColor: 'red',
                                 showLine: true,
                             }]
                         }}
@@ -82,6 +83,16 @@ export default function DataStreamPage() {
                             },
                             responsive: true,
                             animation: true,
+                            elements: {
+                                line: {
+                                    borderJoinStyle: 'round',
+                                    tension: 0
+                                },
+                                point: {
+                                    hoverRadius: 10,
+                                    radius: 3,
+                                }
+                            }
                         }}
                     />
                 </div>

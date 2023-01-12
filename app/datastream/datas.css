@@ -1,0 +1,10 @@
+.graphHolder {
+    width: 48vw;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    .graphHolder {
+        width: 100vw;
+    }
+}
