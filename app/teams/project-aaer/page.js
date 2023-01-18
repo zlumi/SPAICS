@@ -2,36 +2,28 @@
 
 import "./aaer.css"
 
-import {STLLoader} from 'three/examples/jsm/loaders/STLLoader'
-import { Canvas, useLoader } from '@react-three/fiber'
-import React, { useRef } from 'react'
-
-
-export const Model = ({url}) => {
-  const geom = useLoader(STLLoader, url);
-
-  const ref = useRef();
-  const {camera} = useThree();
-  useEffect(() => {
-      camera.lookAt(ref.current.position);
-  });
-
-  return (
-      <>
-        <mesh ref={ref}>
-          <primitive object={geom} attach="geometry"/>
-          <meshStandardMaterial color={"orange"}/>
-        </mesh>
-        <ambientLight/>
-        <pointLight position={[10, 10, 10]}/>
-      </>
-  );
-};
+import { Canvas, useLoader, useThree } from '@react-three/fiber'
+import { React, useRef, useEffect } from 'react'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 export default function TeamAAER() {
+  const model_1 = useLoader(
+    GLTFLoader, 'https://raw.githubusercontent.com/zLuminate/SPAICS/main/app/teams/project-aaer/models/paper.gltf'
+  )
+
   return (
     <Canvas style={{ height:"80vh", width:"100vw" }}>
-      <Model url="https://raw.githubusercontent.com/SPAICS/SPAICS.github.io/master/app/teams/project-aaer/models/paper.stl"/>
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <spotLight position={[-10, -10, -10]} angle={0.15} penumbra={1} />
+      <group position={[0, -1, 0]}>
+        <mesh
+          geometry={model_1.scene.children[0].geometry}
+          material={model_1.scene.children[0].material}
+          position={[0, 0, 0]}
+          scale={[0.1, 0.1, 0.1]}
+        />
+      </group>
     </Canvas>
   )
 }
