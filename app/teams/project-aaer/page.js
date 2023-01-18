@@ -2,31 +2,36 @@
 
 import "./aaer.css"
 
-import { Canvas, useFrame } from '@react-three/fiber'
+import {STLLoader} from 'three/examples/jsm/loaders/STLLoader'
+import { Canvas, useLoader } from '@react-three/fiber'
 import React, { useRef } from 'react'
 
 
-function Box() {
-  const meshRef = useRef()
+export const Model = ({url}) => {
+  const geom = useLoader(STLLoader, url);
 
-  useFrame((state) => {
-    meshRef.current.rotation.x = meshRef.current.rotation.y += 0.01
-  })
+  const ref = useRef();
+  const {camera} = useThree();
+  useEffect(() => {
+      camera.lookAt(ref.current.position);
+  });
 
   return (
-    <mesh ref={meshRef}>
-      <boxGeometry/>
-      <meshStandardMaterial color={0xff00ff} />
-    </mesh>
-  )
-}
+      <>
+        <mesh ref={ref}>
+          <primitive object={geom} attach="geometry"/>
+          <meshStandardMaterial color={"orange"}/>
+        </mesh>
+        <ambientLight/>
+        <pointLight position={[10, 10, 10]}/>
+      </>
+  );
+};
 
 export default function TeamAAER() {
   return (
     <Canvas style={{ height:"80vh", width:"100vw" }}>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]}/>
-      <Box/>
+      <Model url="https://raw.githubusercontent.com/SPAICS/SPAICS.github.io/master/app/teams/project-aaer/models/paper.stl"/>
     </Canvas>
   )
 }
