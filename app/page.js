@@ -145,7 +145,7 @@ export default function Home() {
           <div className="right" style={{ paddingTop:0 }}>
             <h1>The Journey of a Thousand Lightyears Begins with one Step</h1>
             <p>
-              Planetary exploration, technological development, cutting-edge innovation all seem so distant, so detachted from reality; but we are here to change that. Two teams, one goal: bring the future to the present.
+              Planetary exploration, technological development, cutting-edge innovation all seem so distant, so detached from reality; but we are here to change that. Two teams, one goal: bring the future to the present.
             </p>
           </div>
           <RightVertConnector/>

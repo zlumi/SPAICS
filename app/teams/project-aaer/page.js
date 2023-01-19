@@ -2,50 +2,35 @@
 
 import "./aaer.css"
 
-import { Canvas, useLoader, useThree } from '@react-three/fiber'
-import { React, useRef, useEffect } from 'react'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import React, { useState, useEffect } from 'react'
+import { MotionH1, MotionP } from "../../components/motionTexts"
 
 export default function TeamAAER() {
-  const model_1 = useLoader(
-    GLTFLoader, 'https://raw.githubusercontent.com/zLuminate/SPAICS/main/app/teams/project-aaer/models/paper.gltf'
-  )
+  return(
+    <div id="TeamAAER">
+      <div style={{ height:"calc(100vh - 6rem)", position:"relative", marginBottom:"3rem" }}>
+        <div style={{ position:"absolute", top:"50%", transform:"translateY(-50%)" }}>
+          <h2 style={{ animationDelay:"1s", padding:0, margin:0 }} id="aaerSubHeading">NL CanSat Competition Team</h2>
+          <h1 id="aaerHeading" style={{ animationDelay:"1.25s", padding:0, lineHeight:"150%" }}>SPAICS Project AAER</h1>
+          <h2 style={{ animationDelay:"2.5s", padding:0, margin:0, marginBottom:"5vh" }} id="aaerSubHeading">Artificial Acceleration of Ecosystem Restoration</h2>
+        </div>
+      </div>
 
-  return (
-    <Canvas style={{ height:"80vh", width:"100vw" }}>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <spotLight position={[-10, -10, -10]} angle={0.15} penumbra={1} />
-      <group position={[0, -1, 0]}>
-        <mesh
-          geometry={model_1.scene.children[0].geometry}
-          material={model_1.scene.children[0].material}
-          position={[0, 0, 0]}
-          scale={[0.1, 0.1, 0.1]}
-        />
-      </group>
-    </Canvas>
+      <div className="page">
+        <MotionH1>The Idea</MotionH1>
+        <MotionP>Some random text here just some more random text that will take up the space of so much random text that you will finally become a random text of the randomest things in the random texts. Lets see how much random text I can type before the random texts can no longer be random and a pattern of randomness starts emerging; randomness; random; all across the random randoms. Random random random and random are the randoms.</MotionP>
+      </div>
+
+      <div className="page">
+        <MotionH1>The Mission</MotionH1>
+        <MotionP>Some random text here just some more random text that will take up the space of so much random text that you will finally become a random text of the randomest things in the random texts. Lets see how much random text I can type before the random texts can no longer be random and a pattern of randomness starts emerging; randomness; random; all across the random randoms. Random random random and random are the randoms.</MotionP>
+      </div>
+
+      <div className="page">
+        <MotionH1>The Values</MotionH1>
+        <MotionP>Some random text here just some more random text that will take up the space of so much random text that you will finally become a random text of the randomest things in the random texts. Lets see how much random text I can type before the random texts can no longer be random and a pattern of randomness starts emerging; randomness; random; all across the random randoms. Random random random and random are the randoms.</MotionP>
+      </div>
+
+    </div>
   )
 }
-
-// <div id="TeamAAER">
-    //   <div style={{ height:"calc(90vh - 3rem)", backgroundColor:"#1F282D", position:"relative" }}>
-    //     <div className="center" style={{ transition:".5s" }}>
-    //       <p style={{ textAlign:"left", animationDelay:".5s" }} id="aaerSubHeading">NL CanSat Competition Team</p>
-    //       <h1 id="aaerHeading">SPAICS Project AAER</h1>
-    //       <p style={{ textAlign:"right", animationDelay:".75s" }} id="aaerSubHeading">Artificial Acceleration of Ecosystem Restoration</p>
-    //     </div>
-    //   </div>
-    //   <div id="aaerContent">
-
-    //     <h1>The Idea</h1>
-    //     <p></p>
-
-    //     <h1>The Mission</h1>
-    //     <p></p>
-
-    //     <h1>The Values</h1>
-    //     <p></p>
-
-    //   </div>
-    // </div>

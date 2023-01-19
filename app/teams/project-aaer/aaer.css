@@ -1,5 +1,5 @@
 #TeamAAER {
-    padding-top: 3rem;
+    padding: 3rem;
     background-size: cover;
 }
 
@@ -18,24 +18,14 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: fadeNScaleIn 1s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
 }
 
 #aaerSubHeading {
     opacity: 0;
     font-size: 1.75rem;
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeNScaleIn {
-    0% {
-        opacity: 0;
-        scale: 0.5;
-    }
-    100% {
-        opacity: 1;
-        scale: 1;
-    }
+    animation: fadeIn 1s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -67,4 +57,9 @@
     #aaerContent {
         display: block;
     }
+}
+
+.page {
+    height: 60vh;
+    width: 100%;
 }
