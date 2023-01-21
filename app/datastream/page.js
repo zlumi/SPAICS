@@ -7,7 +7,6 @@ import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { Scatter } from 'react-chartjs-2';
 import { MotionP } from '../components/motionComponents';
-import FireButton from '../components/fireButton';
 
 firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_ApiKey,
@@ -56,7 +55,6 @@ export default function DataStreamPage() {
         <div style={{ paddingTop:"3rem" }}>
             <div style={{ margin:"1rem", position:"relative" }}>
                 <MotionP>This Page is currently Underdevelopment, the data is randomly generated. Thanks for your support :)</MotionP>
-                <FireButton/>
             </div>
 
             { Object.keys(chartsDatas).map((variable) => (

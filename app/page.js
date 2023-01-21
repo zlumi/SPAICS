@@ -210,7 +210,7 @@ export default function Home() {
               <p>Olive Webster - Inertia Recovery</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1QPCsFfU5Pi5FNDgQR7bqgIt5LN6PuwUH" } alt="" />
+              <img src={ "https://drive.google.com/uc?export=view&id=1bQkYBbNBOGH1bbPRhlGrbMJGvP8bMRdr" } alt="" />
               <p>Ayeesha Worgan - Inertia Public Relations</p>
             </div>
           </Parallax>
@@ -279,16 +279,28 @@ export default function Home() {
         </div>
         <div className="container" style={{ paddingTop:0 }}>
           <div className="supporter">
-            <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="supporter1" />
-            <p>Amsterdam International Community School</p>
-          </div>
-          <div className="supporter">
             <img src={ "https://drive.google.com/uc?export=view&id=1-ijwidEOF1YFLUlCKnrYMpqq6YcN3kl1" } alt="supporter2" />
             <p>European Space Agency</p>
           </div>
           <div className="supporter">
             <img src={ "https://drive.google.com/uc?export=view&id=1_rvNyrdg-YAPzqxJ3_s8X-9UO5rtFUKT" } alt="supporter3" />
             <p>Delft Aerospace Rocket Engineering</p>
+          </div>
+        </div>
+
+        <div className="container" style={{ padding:0 }}>
+          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, orange 0%, yellow 50%, #DAD2D8 75%)"}}>
+            Partners
+          </GradientH1>
+        </div>
+        <div className="container" style={{ paddingTop:0 }}>
+          <div className="supporter">
+            <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="supporter1" />
+            <p>Student Council of the AICS</p>
+          </div>
+          <div className="supporter">
+            <img src={ "https://drive.google.com/uc?export=view&id=1TtxeO8-cmVweMEXSZrVg88xEFeKUl8DF" } alt="supporter2" />
+            <p>ACE Media Team</p>
           </div>
         </div>
 
