@@ -6,6 +6,7 @@ import firebase from 'firebase/compat/app';
 import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.js';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { Scatter } from 'react-chartjs-2';
+import { MotionP } from '../components/motionComponents';
 
 firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_ApiKey,
@@ -52,6 +53,11 @@ export default function DataStreamPage() {
 
     return (
         <div style={{ paddingTop:"3rem" }}>
+            <div style={{ margin:"1rem" }}>
+                <MotionP>This Page is currently Underdevelopment, the data is randomly generated. Thanks for your support :)</MotionP>
+                <button>🔥</button>
+            </div>
+
             { Object.keys(chartsDatas).map((variable) => (
                 <div key={variable} class="graphHolder">
                     <Scatter 

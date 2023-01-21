@@ -31,7 +31,7 @@ export default function TeamAAER() {
       "https://drive.google.com/uc?export=view&id=1HszQ2AAU4gsxQXlL7NyGBSoC0xxxQLx3",
       "Louis Amado",
       "CanSat Body Architect",
-      "Louis will establish the basis of the mission by maintaining the structural integrity of the CanSat through the design of the body. He will put all the various systems to form a unit of solidity, versatility, and therefore, value, ultimately providing the CanSat of its life."
+      "Louis will establish the basis of the mission by maintaining the structural integrity of the CanSat through the design of the body. He will put all the various systems to form a unit of solidity, versatility, and value. Therefore making the success of our secondary mission possible."
     ],
     [
       "https://drive.google.com/uc?export=view&id=1TpOcjGNM3rPEY9vIzU5nvpljO5V9Lr2e",
