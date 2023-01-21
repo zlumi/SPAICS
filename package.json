@@ -12,6 +12,7 @@
     "@next/font": "^13.0.7",
     "@react-three/drei": "^9.53.0",
     "@react-three/fiber": "^8.10.0",
+    "@types/three": "^0.148.0",
     "@vercel/analytics": "^0.1.6",
     "chart.js": "^4.1.2",
     "eslint": "8.29.0",

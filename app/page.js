@@ -324,11 +324,3 @@ export default function Home() {
     </ParallaxProvider>
   )
 }
-
-// home : introduction, team description & browse navs, projected timeline
-// teams : detailed team description, team roles & their descriptions, members' photo & bio
-// legacy : SPAICS history, past teams & achievements, area of influence & impact
-// contact : social media links, contact info, contact form
-// 
-// support us : 
-// dashboard : dynamic launch data
