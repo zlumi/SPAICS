@@ -11,7 +11,6 @@ import SignInScreen from '../components/auth';
 
 import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.js';
 import { Scatter } from 'react-chartjs-2';
-import { MotionP } from '../components/motionComponents';
 
 firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_ApiKey,
@@ -64,9 +63,9 @@ export default function DataStreamPage() {
             {!user && <SignInScreen/>}
             {user && <>
                 <div style={{ margin:"1rem", position:"relative" }}>
-                <MotionP>
+                <p>
                     This Page is currently Underdevelopment, the data is randomly generated. Thanks for your support :)
-                </MotionP>
+                </p>
                 </div>
 
                 { Object.keys(chartsDatas).map((variable) => (
