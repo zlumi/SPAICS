@@ -6,10 +6,22 @@ import { AnalyticsWrapper } from './components/analytics';
 import JSFailWarning from "./components/jsFailWarning";
 import Script from "next/script";
 
-export default async function RootLayout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <html>
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-7C858ZCQZK" strategy="afterInteractive"/>
+        <Script id="GoogleAnalytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7C858ZCQZK');
+          `}
+        </Script>
+
         <title>SPAICS 22-23</title>
         <Script id="warning-remover">
           {`

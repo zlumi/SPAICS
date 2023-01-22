@@ -18,6 +18,7 @@
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.7",
     "firebase": "^9.15.0",
+    "firebaseui": "^6.0.2",
     "framer-motion": "latest",
     "next": "latest",
     "npm": "^9.2.0",

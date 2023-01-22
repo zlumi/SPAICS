@@ -7,6 +7,8 @@ import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { Scatter } from 'react-chartjs-2';
 import { MotionP } from '../components/motionComponents';
+import { useAuthState } from "react-firebase-hooks/auth";
+import SignInScreen from '../components/auth';
 
 firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_ApiKey,
@@ -22,6 +24,8 @@ ChartJS.register(LinearScale, PointElement, LineElement);
 const collectionRef = firebase.firestore().collection('spaics-23');
 
 export default function DataStreamPage() {
+    const [user, loading, error] = useAuthState(firebase.auth());
+
     const [rawData] = useDocumentData(collectionRef.doc('aaer'));
     var scatterData = {};
     const chartsDatas = {}
@@ -50,59 +54,65 @@ export default function DataStreamPage() {
         "air-quality": "ppm",
     }
 
-
     return (
         <div style={{ paddingTop:"3rem" }}>
-            <div style={{ margin:"1rem", position:"relative" }}>
-                <MotionP>This Page is currently Underdevelopment, the data is randomly generated. Thanks for your support :)</MotionP>
-            </div>
-
-            { Object.keys(chartsDatas).map((variable) => (
-                <div key={variable} class="graphHolder">
-                    <Scatter 
-                        data={{ 
-                            datasets: [{ 
-                                label: 'Scatter Dataset', 
-                                data: chartsDatas[variable], 
-                                backgroundColor: 'rgb(255, 99, 132)',
-                                borderColor: 'red',
-                                showLine: true,
-                            }]
-                        }}
-                        options={{
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    title: {
-                                        display: true,
-                                        text: variable+" ("+units[variable]+")",
-                                    }
-                                },
-                                x: {
-                                    beginAtZero: true,
-                                    title: {
-                                        display: true,
-                                        text: 'Time',
-                                    }
-                                }
-                            },
-                            responsive: true,
-                            animation: true,
-                            elements: {
-                                line: {
-                                    borderJoinStyle: 'round',
-                                    tension: 0
-                                },
-                                point: {
-                                    hoverRadius: 10,
-                                    radius: 3,
-                                }
-                            }
-                        }}
-                    />
+            {loading && <h4>You are being logged in...</h4>}
+            {error && <SignInScreen/>}
+            {!user && <SignInScreen/>}
+            {user && <>
+                <div style={{ margin:"1rem", position:"relative" }}>
+                <MotionP>
+                    This Page is currently Underdevelopment, the data is randomly generated. Thanks for your support :)
+                </MotionP>
                 </div>
-            ))}
-            <pre>{JSON.stringify(scatterData, null, 4)}</pre>
+
+                { Object.keys(chartsDatas).map((variable) => (
+                    <div key={variable} class="graphHolder">
+                        <Scatter 
+                            data={{ 
+                                datasets: [{ 
+                                    label: 'Scatter Dataset', 
+                                    data: chartsDatas[variable], 
+                                    backgroundColor: 'rgb(255, 99, 132)',
+                                    borderColor: 'red',
+                                    showLine: true,
+                                }]
+                            }}
+                            options={{
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        title: {
+                                            display: true,
+                                            text: variable+" ("+units[variable]+")",
+                                        }
+                                    },
+                                    x: {
+                                        beginAtZero: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Time',
+                                        }
+                                    }
+                                },
+                                responsive: true,
+                                animation: true,
+                                elements: {
+                                    line: {
+                                        borderJoinStyle: 'round',
+                                        tension: 0
+                                    },
+                                    point: {
+                                        hoverRadius: 10,
+                                        radius: 3,
+                                    }
+                                }
+                            }}
+                        />
+                    </div>
+                ))}
+                <pre>{JSON.stringify(scatterData, null, 4)}</pre>
+            </>}
         </div>
     )
 }
