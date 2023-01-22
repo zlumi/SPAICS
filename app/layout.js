@@ -3,6 +3,7 @@ import Footer from "./components/footer";
 import './globals.css';
 
 import { AnalyticsWrapper } from './components/analytics';
+import JSFailWarning from "./components/jsFailWarning";
 import Script from "next/script";
 
 export default async function RootLayout({ children }) {
@@ -20,6 +21,13 @@ export default async function RootLayout({ children }) {
             gtag('config', 'G-7C858ZCQZK');
           `}
         </Script>
+        <Script id="warning-remover">
+            {`
+              if (document.getElementById('warning')) {
+                  document.getElementById('warning').remove();
+              }
+            `}
+        </Script>
       </head>
 
       <body>
@@ -27,6 +35,7 @@ export default async function RootLayout({ children }) {
         {children}
         <Footer/>
         <AnalyticsWrapper/>
+        <JSFailWarning/>
       </body>
     </html>
   );

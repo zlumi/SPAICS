@@ -5,7 +5,6 @@ import bg1 from "./assets/backgrounds/1.png"
 import RightVertConnector from "./components/home-components/rightvertconn";
 import DrawnLogo from "./components/home-components/drawnlogo";
 import Timeline from "./components/home-components/timeline";
-import JSFailWarning from "./components/jsFailwarning";
 
 import './homeStyles.css'
 import Image from "next/image"
@@ -93,7 +92,6 @@ export default function Home() {
 
   return (
     <ParallaxProvider>
-    <JSFailWarning/>
     <Script id="photoboothHeightModif">
       {`
         const photobooth = document.getElementById("photobooth");
@@ -102,10 +100,6 @@ export default function Home() {
         high = photobooth.offsetHeight-(window.innerHeight*0.1);
     
         photobooth.style.height = high + "px";
-
-        if (document.getElementById('warning')) {
-          document.getElementById('warning').remove();
-        }
       `}
     </Script>
     <div style={{ position:"relative" }}>
