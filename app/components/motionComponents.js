@@ -91,7 +91,7 @@ export function MotionP({ children, style, ...props }) {
 
 export function MotionDiv({ children, style, delayInc=0, ...props }) {
     const { ref, inView } = useInView({
-        threshold: 0.5,
+        threshold: 0.3,
         triggerOnce: true,
     })
     const animation = useAnimation()

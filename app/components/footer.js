@@ -1,7 +1,13 @@
+'use client'
+
+import KofiButton from "kofi-button";
 /* eslint-disable @next/next/no-img-element */
 
-export default async function Footer() {
+import Script from "next/script";
+
+export default function Footer() {
     return (
+        <>
         <footer id="contact">
             <div className="panel" style={{ fontFamily:"Poppins" }}>
                 <a href="/teams/inertia">Inertia</a>
@@ -47,6 +53,13 @@ export default async function Footer() {
                     />
                 </a>
             </div>
+            <div className="panel" id="bottomPanel">
+                <KofiButton
+                    kofiID="spaics23"
+                    title="Buy the team a coffee"
+                />
+            </div>
         </footer>
+        </>
     );
 }

@@ -91,6 +91,7 @@ export default function TeamAAER() {
       <div className="page">
         <MotionH1>Our CanSat</MotionH1>
         <CansatModel/>
+        <p>(3D models are undergoing debug)</p>
       </div>
 
     </div>

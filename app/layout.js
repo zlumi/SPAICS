@@ -1,3 +1,5 @@
+'use client';
+
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import './globals.css';
@@ -5,12 +7,13 @@ import './globals.css';
 import { AnalyticsWrapper } from './components/analytics';
 import JSFailWarning from "./components/jsFailWarning";
 import Script from "next/script";
+import Head from "next/head";
 
 export default function RootLayout({ children }) {
   return (
     <html>
       <head>
-        {/* Google tag (gtag.js) */}
+        <title>SPAICS 22-23</title>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-7C858ZCQZK" strategy="afterInteractive"/>
         <Script id="GoogleAnalytics" strategy="afterInteractive">
           {`
@@ -21,16 +24,15 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-7C858ZCQZK');
           `}
         </Script>
-
-        <title>SPAICS 22-23</title>
         <Script id="warning-remover">
-          {`
-            if (document.getElementById('warning')) {
-                document.getElementById('warning').remove();
-            }
-          `}
+            {`
+              if (document.getElementById('warning')) {
+                  document.getElementById('warning').remove();
+              }
+            `}
         </Script>
       </head>
+
       <body>
         <NavBar/>
         {children}
