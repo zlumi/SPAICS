@@ -266,7 +266,7 @@ export default function Home() {
           </GradientH1>
         </div>
         <div className="container" style={{ padding:0 }}>
-          <div className="sponsor">
+          <div className="sponsor" onClick={() => window.open("https://aics.espritscholen.nl/")}>
             <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="sponsor1" />
             <p>Amsterdam International Community School</p>
           </div>
@@ -274,33 +274,27 @@ export default function Home() {
 
         <div className="container" style={{ padding:0 }}>
           <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, darkred 0%, red 50%, #DAD2D8 75%)"}}>
-            Supporters
+            Supporters & Partners
           </GradientH1>
         </div>
         <div className="container" style={{ paddingTop:0 }}>
           <div className="supporter">
             <img src={ "https://drive.google.com/uc?export=view&id=1-ijwidEOF1YFLUlCKnrYMpqq6YcN3kl1" } alt="supporter2" />
-            <p>European Space Agency</p>
+            <p>European Space Agency<br/>/ ESERO</p>
           </div>
           <div className="supporter">
             <img src={ "https://drive.google.com/uc?export=view&id=1_rvNyrdg-YAPzqxJ3_s8X-9UO5rtFUKT" } alt="supporter3" />
             <p>Delft Aerospace Rocket Engineering</p>
           </div>
-        </div>
-
-        <div className="container" style={{ padding:0 }}>
-          <GradientH1 style={{ fontSize:"4rem", paddingBottom:0, background:"linear-gradient(90deg, orange 0%, yellow 50%, #DAD2D8 75%)"}}>
-            Partners
-          </GradientH1>
-        </div>
-        <div className="container" style={{ paddingTop:0 }}>
-          <div className="supporter">
+          <div className="partner" onClick={() => {
+            window.open("https://sites.google.com/aics.espritscholen.nl/studentdashboard/homepage")
+          }}>
             <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="supporter1" />
-            <p>Student Council of the AICS</p>
+            <p>Student Council<br/>of the AICS</p>
           </div>
-          <div className="supporter">
+          <div className="partner" onClick={() => {window.open("https://webv2.mediaataics.repl.co/home/")}}>
             <img src={ "https://drive.google.com/uc?export=view&id=1TtxeO8-cmVweMEXSZrVg88xEFeKUl8DF" } alt="supporter2" />
-            <p>ACE Media Team</p>
+            <p>ACE Media Team<br/>(AICS)</p>
           </div>
         </div>
 

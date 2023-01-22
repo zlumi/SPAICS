@@ -83,7 +83,7 @@
     max-height: 80vh;
 }
 
-.sponsor, .supporter, .mentor {
+.sponsor, .supporter, .partner, .mentor {
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -94,6 +94,10 @@
     font-family: "Poppins";
 }
 
+.sponsor, .partner {
+    cursor: pointer;
+}
+
 .sponsor img {
     max-width: 15vw;
     background: linear-gradient(225deg, #EFEBF1 0%, #A6A6A6 100%);
@@ -101,10 +105,21 @@
     border-radius: 3rem;
 }
 
+.partner p, .supporter p {
+    font-size: 1rem;
+}
+
 .supporter img {
-    max-width: 10vw;
+    max-width: calc(12vw - 0.25rem);
     background-color: #DAD2D8;
     border: beige 0.5rem solid;
+    border-radius: 3rem;
+}
+
+.partner img {
+    max-width: 12vw;
+    background-color: #DAD2D8;
+    border: mediumslateblue 0.25rem solid;
     border-radius: 3rem;
 }
 
