@@ -3,12 +3,14 @@
 import './datas.css';
 import 'firebase/compat/firestore';
 import firebase from 'firebase/compat/app';
-import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.js';
+import 'firebase/compat/auth';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
+import { useAuthState } from "react-firebase-hooks/auth";
+
+import { Chart as ChartJS, LinearScale, PointElement, LineElement } from 'chart.js';
 import { Scatter } from 'react-chartjs-2';
 import { MotionP } from '../components/motionComponents';
-import { useAuthState } from "react-firebase-hooks/auth";
-import SignInScreen from '../components/auth';
+// import SignInScreen from '../components/auth';
 
 firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_ApiKey,
@@ -56,10 +58,10 @@ export default function DataStreamPage() {
 
     return (
         <div style={{ paddingTop:"3rem" }}>
-            {loading && <h4>You are being logged in...</h4>}
+            {/* {loading && <h4>You are being logged in...</h4>}
             {error && <SignInScreen/>}
-            {!user && <SignInScreen/>}
-            {user && <>
+            {!user && <SignInScreen/>} */}
+            <>
                 <div style={{ margin:"1rem", position:"relative" }}>
                 <MotionP>
                     This Page is currently Underdevelopment, the data is randomly generated. Thanks for your support :)
@@ -112,7 +114,7 @@ export default function DataStreamPage() {
                     </div>
                 ))}
                 <pre>{JSON.stringify(scatterData, null, 4)}</pre>
-            </>}
+            </>
         </div>
     )
 }
