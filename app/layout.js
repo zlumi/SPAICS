@@ -1,5 +1,3 @@
-'use client';
-
 import NavBar from "./components/navbar";
 import Footer from "./components/footer";
 import './globals.css';
@@ -7,9 +5,8 @@ import './globals.css';
 import { AnalyticsWrapper } from './components/analytics';
 import JSFailWarning from "./components/jsFailWarning";
 import Script from "next/script";
-import Head from "next/head";
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html>
       <head>

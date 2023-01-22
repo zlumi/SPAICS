@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import 'firebaseui/dist/firebaseui.css';
-import { auth } from "firebaseui";
-import firebaseui from 'firebaseui';
 
-const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback}) => {
+export default function StyledFirebaseAuth({uiConfig, firebaseAuth, className, uiCallback}) {
     const [firebaseui, setFirebaseui] = useState(null);
     useEffect(() => {
         import('firebaseui').then(firebaseui => {
@@ -16,8 +14,6 @@ const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback}) => 
     const elementRef = useRef(null);
 
     useEffect(() => {
-        // Firebase UI only works on the Client. So we're loading the package only after
-        // the component has mounted, so that this works when doing server-side rendering.
         setFirebaseui(require('firebaseui'));
     }, []);
 
@@ -55,5 +51,3 @@ const StyledFirebaseAuth = ({uiConfig, firebaseAuth, className, uiCallback}) => 
 
     return <div className={className} ref={elementRef} />;
 };
-
-export default StyledFirebaseAuth;
