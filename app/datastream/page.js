@@ -68,7 +68,7 @@ export default function DataStreamPage() {
                 </p>
                 </div>
 
-                { Object.keys(chartsDatas).map((variable) => (
+                { Object.keys(chartsDatas).sort().map((variable) => (
                     <div key={variable} class="graphHolder">
                         <Scatter 
                             data={{ 
