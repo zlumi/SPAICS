@@ -5,7 +5,7 @@ import "./aaer.css"
 
 import React, { useRef, useState } from 'react'
 import { MotionDiv, MotionH1, MotionP } from "../../components/motionComponents"
-import CansatModel from "../../components/aaerCansat"
+import AAER_Model from "../../components/cansat_aaer"
 
 export default function TeamAAER() {
   const members = [
@@ -90,7 +90,7 @@ export default function TeamAAER() {
 
       <div className="page">
         <MotionH1>Our CanSat</MotionH1>
-        <CansatModel/>
+        <AAER_Model style={{ height: "90vh", width: "90vw", border: "1px white solid" }}/>
         <p>(3D models are undergoing debug)</p>
       </div>
 
