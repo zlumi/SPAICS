@@ -53,7 +53,7 @@ export default function AAER_Steam() {
         "humidity": "%",
         "pressure": "hPa",
         "altitude": "m",
-        "air-quality": "ppm",
+        "air-quality": "kΩ",
     }
 
     return (
