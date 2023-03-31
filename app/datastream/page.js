@@ -7,6 +7,8 @@ import './datas.css';
 
 export default function DataStreamPage() {
     return (
-        window.location.href = "/datastream/aaer"
+        <Script id="L">{
+            window.location.href = "/datastream/aaer"
+        }</Script>
     )
 }
