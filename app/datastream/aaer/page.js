@@ -63,9 +63,6 @@ export default function AAER_Steam() {
             {!user && <SignInScreen/>}
             {user && <>
                 <div style={{ margin:"1rem", position:"relative" }}>
-                <h1>
-                    LAUNCHING TODAY - 31st March!!! Countdown to launch: <span style={{ color:"red" }}>T-0:04:00</span>
-                </h1>
                 </div>
 
                 { Object.keys(chartsDatas).sort().map((variable) => (
