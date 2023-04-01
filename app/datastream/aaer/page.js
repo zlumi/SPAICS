@@ -61,6 +61,7 @@ export default function AAER_Steam() {
             {loading && <h4>You are being logged in...</h4>}
             {error && <SignInScreen/>}
             {!user && <SignInScreen/>}
+            <p>(the following data is only and solely to be used for viewing purposes; please do not reference.)</p>
             {user && <>
                 <div style={{ margin:"1rem", position:"relative" }}>
                 </div>
