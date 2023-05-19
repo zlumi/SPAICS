@@ -5,7 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
 function CanSat() {
     const mesh = useRef()
-    useFrame(() => (mesh.current.rotation.y += 0.02))
+    useFrame(() => (mesh.current.rotation.y -= 0.001))
     
     const model = useLoader(GLTFLoader, "/models/inertiaSat.glb")
 
