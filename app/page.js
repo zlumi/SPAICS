@@ -118,7 +118,7 @@ export default function Home() {
         color:"#DAD2D8", position:"absolute", left:"50%", zIndex:3, textAlign:"center",
         transform:"translateX(-50%)", top:"85vh", opacity:0,
       }}>
-        <p style={{ fontFamily:'"Times New Roman", Times, serif', margin:0, fontWeight:"bold" }}>
+        <p style={{ fontFamily:'"Nunito Sans', margin:0, fontWeight:"bold" }}>
           CanSat Competition Team 2022-2023
           <br/>
           @ Amsterdam International Community School
