@@ -57,14 +57,14 @@ function Photobooth() {
         <Parallax speed={-10}>
           {gallaryImgIDs_col1.map((id, index) => (
             <div className="photo" key={index}>
-              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id="+id } alt={ "photo_"+index } />
             </div>
           ))}
         </Parallax>
         <Parallax speed={-20}>
           {gallaryImgIDs_col2.map((id, index) => (
             <div className="photo" key={index}>
-              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id="+id } alt={ "photo_"+index } />
             </div>
           ))}
         </Parallax>
@@ -76,7 +76,7 @@ function Photobooth() {
         <Parallax speed={-10}>
           {gallaryImgIDs_col1.concat(gallaryImgIDs_col2).map((id, index) => (
             <div className="photo" key={index}>
-              <img src={ "https://drive.google.com/uc?export=view&id="+id } alt={ "photo_"+index } />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id="+id } alt={ "photo_"+index } />
             </div>
           ))}
         </Parallax>
@@ -188,57 +188,57 @@ export default function Home() {
         <div className="container" id="team-members" style={{ paddingLeft:"1vw", paddingRight:"1vw" }}>
           <Parallax speed={7.5} style={{ maxWidth:"24.5vw" }}>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1O3-uG6OyX-04vf_DXUe9wAlHL-y-6Fmv" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1O3-uG6OyX-04vf_DXUe9wAlHL-y-6Fmv" } alt="" />
               <p>Gonçalo Lopes Madeira Lau - Inertia Body Design I</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1BMIO4OVuQArv9Rf8zMysRqxwNqNsiIIT" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1BMIO4OVuQArv9Rf8zMysRqxwNqNsiIIT" } alt="" />
               <p>Abhishek Pillai - Inertia Software & Hardware I</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1Gu7DuMslzjtJ9ikuEkIijxFoNsA2kD7W" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1Gu7DuMslzjtJ9ikuEkIijxFoNsA2kD7W" } alt="" />
               <p>Henry Harrison - Inertia Software & Hardware II</p>
             </div>
           </Parallax>
           <Parallax speed={-5} style={{ maxWidth:"24.5vw" }}>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1-J5MGEz_s_XHs2T_ud2SJJNr4m-bKbbh" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1-J5MGEz_s_XHs2T_ud2SJJNr4m-bKbbh" } alt="" />
               <p>Matei Rusu - Inertia Body Design II</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1yeV6mh4d8Yxsv0wnmSxbeoJupAwZfZAN" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1yeV6mh4d8Yxsv0wnmSxbeoJupAwZfZAN" } alt="" />
               <p>Olive Webster - Inertia Recovery</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1bQkYBbNBOGH1bbPRhlGrbMJGvP8bMRdr" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1bQkYBbNBOGH1bbPRhlGrbMJGvP8bMRdr" } alt="" />
               <p>Ayeesha Worgan - Inertia Public Relations</p>
             </div>
           </Parallax>
           <Parallax speed={2.5} style={{ maxWidth:"24.5vw" }}>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1HszQ2AAU4gsxQXlL7NyGBSoC0xxxQLx3" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1HszQ2AAU4gsxQXlL7NyGBSoC0xxxQLx3" } alt="" />
               <p>Louis Amado - AAER Body Design I</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=19c5p7aFZllcbWHXaFOYFe7sTNWe_6ZP5" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=19c5p7aFZllcbWHXaFOYFe7sTNWe_6ZP5" } alt="" />
               <p>Rishabh Kurup - AAER Software & Hardware I</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1TpOcjGNM3rPEY9vIzU5nvpljO5V9Lr2e" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1TpOcjGNM3rPEY9vIzU5nvpljO5V9Lr2e" } alt="" />
               <p>Eklavya Kukreja - AAER Software & Hardware II</p>
             </div>
           </Parallax>
           <Parallax speed={-10} style={{ maxWidth:"24.5vw" }}>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1OmxoQVHulbyZy03O9lUWibHP6y1Uv5B5" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1OmxoQVHulbyZy03O9lUWibHP6y1Uv5B5" } alt="" />
               <p>Daksh Bhalla - AAER Body Design II</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1BOB2slaBulYK2BprW1YiB6a1SeLtBTt3" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1BOB2slaBulYK2BprW1YiB6a1SeLtBTt3" } alt="" />
               <p>Palmis Yahoo - AAER Recovery</p>
             </div>
             <div className="member">
-              <img src={ "https://drive.google.com/uc?export=view&id=1I2OwdZDNOjTeTJdmOo9N5Zz6sk9ZkixA" } alt="" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1I2OwdZDNOjTeTJdmOo9N5Zz6sk9ZkixA" } alt="" />
               <p>Hank Zhong - AAER Public Relations; Software</p>
             </div>
           </Parallax>
@@ -267,7 +267,7 @@ export default function Home() {
         </div>
         <div className="container" style={{ padding:0 }}>
           <div className="sponsor" onClick={() => window.open("https://aics.espritscholen.nl/")}>
-            <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="sponsor1" />
+            <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="sponsor1" />
             <p>Amsterdam International Community School</p>
           </div>
         </div>
@@ -279,21 +279,21 @@ export default function Home() {
         </div>
         <div className="container" style={{ paddingTop:0 }}>
           <div className="supporter">
-            <img src={ "https://drive.google.com/uc?export=view&id=1-ijwidEOF1YFLUlCKnrYMpqq6YcN3kl1" } alt="supporter2" />
+            <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1-ijwidEOF1YFLUlCKnrYMpqq6YcN3kl1" } alt="supporter2" />
             <p>European Space Agency<br/>/ ESERO</p>
           </div>
           <div className="supporter">
-            <img src={ "https://drive.google.com/uc?export=view&id=1_rvNyrdg-YAPzqxJ3_s8X-9UO5rtFUKT" } alt="supporter3" />
+            <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1_rvNyrdg-YAPzqxJ3_s8X-9UO5rtFUKT" } alt="supporter3" />
             <p>Delft Aerospace Rocket Engineering</p>
           </div>
           <div className="partner" onClick={() => {
             window.open("https://sites.google.com/aics.espritscholen.nl/studentdashboard/homepage")
           }}>
-            <img src={ "https://drive.google.com/uc?export=view&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="supporter1" />
+            <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1iLmAUPxS_WUaA6BPehAs9EdVA63vZ4c1" } alt="supporter1" />
             <p>Student Council<br/>of the AICS</p>
           </div>
           <div className="partner" onClick={() => {window.open("https://webv2.mediaataics.repl.co/home/")}}>
-            <img src={ "https://drive.google.com/uc?export=view&id=1TtxeO8-cmVweMEXSZrVg88xEFeKUl8DF" } alt="supporter2" />
+            <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1TtxeO8-cmVweMEXSZrVg88xEFeKUl8DF" } alt="supporter2" />
             <p>ACE Media Team<br/>(AICS)</p>
           </div>
         </div>
@@ -306,11 +306,11 @@ export default function Home() {
         <div className="container" style={{ paddingTop:0 }}>
           <div className="container" style={{ maxWidth:"60rem" }}>
             <div className="mentor">
-              <img src={ "https://drive.google.com/uc?export=view&id=1177HByDiOIzYkaACDJvmSg2axmqkpfDu" } alt="mentor1" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1177HByDiOIzYkaACDJvmSg2axmqkpfDu" } alt="mentor1" />
               <p>Mr Matt Decovsky</p>
             </div>
             <div className="mentor">
-              <img src={ "https://drive.google.com/uc?export=view&id=1RseO_Eukc3giP_r9o229ZkmYmiikBG9A" } alt="mentor2" />
+              <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1RseO_Eukc3giP_r9o229ZkmYmiikBG9A" } alt="mentor2" />
               <p>Grayson Hoare</p>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function Home() {
 
       <div style={{ minHeight:"50vh", padding:"10vh 0", textAlign:"center" }}>
         <h1>Want to know More?</h1>
-        <img src={ "https://drive.google.com/uc?export=view&id=1-vBrrFCIrNFedbToIUhim1CU5gmrOOSk" } alt="logo" style={{ width:"20vw" }}/>
+        <img src={ "https://drive.google.com/thumbnail?sz=w400&id=1-3leBKP79dmZp6SOSz3mn_7Fi47qcKUz" } alt="logo" style={{ width:"20vw" }}/>
         <div className="container" style={{ padding:0, width:"60vw", left:"50%", transform:"translateX(-50%)", position:"absolute", alignItems:"center" }}>
           <div style={{ padding:0 }}><a href="#teams">Teams Statuses</a></div>
           <div style={{ padding:0 }}><a href="/legacy">Our History</a></div>

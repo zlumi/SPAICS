@@ -10,37 +10,37 @@ import AAER_Model from "../../components/cansat_aaer"
 export default function TeamAAER() {
   const members = [
     [
-      "https://drive.google.com/uc?export=view&id=19c5p7aFZllcbWHXaFOYFe7sTNWe_6ZP5",
+      "https://drive.google.com/thumbnail?sz=w400&id=19c5p7aFZllcbWHXaFOYFe7sTNWe_6ZP5",
       "Rishabh Kurup",
       "Hardware & Software Engineer",
       "Rishabh combines the on-screen computer logics with the physical electronics. From data collection to transmission and processing, he will work on the designing of all sensory-related systems. Circuits, programming, data analytics are all his forte."
     ],
     [
-      "https://drive.google.com/uc?export=view&id=1I2OwdZDNOjTeTJdmOo9N5Zz6sk9ZkixA",
+      "https://drive.google.com/thumbnail?sz=w400&id=1I2OwdZDNOjTeTJdmOo9N5Zz6sk9ZkixA",
       "Hank Zhong",
       "Public Outreach Officer",
       "Hank is in charge of the media presence and the various forms of outreach, to capture the knowledge & experiences all while making the project accessible, understandable, and engaging. His skills with software also allowed for several extensions, including the website & the teams' data-streams."
     ],
     [
-      "https://drive.google.com/uc?export=view&id=1BOB2slaBulYK2BprW1YiB6a1SeLtBTt3",
+      "https://drive.google.com/thumbnail?sz=w400&id=1BOB2slaBulYK2BprW1YiB6a1SeLtBTt3",
       "Palmis Yahoo",
       "Recovery System Designer",
       "Palmis coordinates the method of recovery for the CanSat, making sure that our CanSat maximizes its ability to land with safety and precision. She is responsible to make sure the CanSat is able to withstand the harsh conditions of the atmosphere and the great fall."
     ],
     [
-      "https://drive.google.com/uc?export=view&id=1HszQ2AAU4gsxQXlL7NyGBSoC0xxxQLx3",
+      "https://drive.google.com/thumbnail?sz=w400&id=1HszQ2AAU4gsxQXlL7NyGBSoC0xxxQLx3",
       "Louis Amado",
       "CanSat Body Architect",
       "Louis will establish the basis of the mission by maintaining the structural integrity of the CanSat through the design of the body. He will put all the various systems to form a unit of solidity, versatility, and value. Therefore making the success of our secondary mission possible."
     ],
     [
-      "https://drive.google.com/uc?export=view&id=1TpOcjGNM3rPEY9vIzU5nvpljO5V9Lr2e",
+      "https://drive.google.com/thumbnail?sz=w400&id=1TpOcjGNM3rPEY9vIzU5nvpljO5V9Lr2e",
       "Eklavya Kukreja",
       "Hardware & Software Engineer",
       "Eklavya is working largely with code as well as the subject of electrical engineering. He will be working relatively more on the moving parts of the CanSat and their deployments based off of the data sensed from the surroundings."
     ],
     [
-      "https://drive.google.com/uc?export=view&id=1OmxoQVHulbyZy03O9lUWibHP6y1Uv5B5",
+      "https://drive.google.com/thumbnail?sz=w400&id=1OmxoQVHulbyZy03O9lUWibHP6y1Uv5B5",
       "Daksh Bhalla",
       "CanSat Body Architect",
       "Daksh implements all the aspects of the CanSat into one cohesive unit. The management of component sizing as well as layering / composition creating in the final CanSat is what he will focus on. Brainstorming & creating models at speed is where he shines."

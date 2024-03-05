@@ -24,31 +24,31 @@ export default function Footer() {
             <div className="panel">
                 <a href="https://github.com/zLuminate/SPAICS" target="_blank" rel="noreferrer">
                     <img
-                        src={ "https://drive.google.com/uc?export=view&id=1Af-cF2NpUWts7b_k_LwZb3IKqlR-Q1ts" }
+                        src={ "https://drive.google.com/thumbnail?sz=w400&id=1Af-cF2NpUWts7b_k_LwZb3IKqlR-Q1ts" }
                         alt="Website Github Repo"
                     />
                 </a>
                 <a href="https://www.instagram.com/spaics_/" target="_blank" rel="noreferrer">
                     <img
-                        src={ "https://drive.google.com/uc?export=view&id=18NjFs4WzeE7xLv71KQvR1vl2we5Ahm4_" }
+                        src={ "https://drive.google.com/thumbnail?sz=w400&id=1qYJgYPu8vSF8N9VWkvr-GpAxZYkBMwlu" }
                         alt="SPAICS Instagram"
                     />
                 </a>
                 <a href="https://www.youtube.com/@spaics" target="_blank" rel="noreferrer">
                     <img
-                        src={ "https://drive.google.com/uc?export=view&id=1ywCSh6aXcQScxiCplJpbDxOM8cvOM7kY" }
+                        src={ "https://drive.google.com/thumbnail?sz=w400&id=1pFekbKJK_8KBHru4PoH9J0VnuVsmzfh1" }
                         alt="SPAICS Youtube"
                     />
                 </a>
                 <a href="https://www.tiktok.com/@spaics_" target="_blank" rel="noreferrer">
                     <img
-                        src={ "https://drive.google.com/uc?export=view&id=1_mSf272M6HWDqXngIpFDXMCJgc4RsbIP" }
+                        src={ "https://drive.google.com/thumbnail?sz=w400&id=1kGFmNQFxKAI8ODu6NCqxogKHRagVS-eZ" }
                         alt="SPAICS TikTok" style={{ scale:"1.375" }}
                     />
                 </a>
                 <a href="mailto:spaics@aics.espritscholen.nl" target="_blank" rel="noreferrer">
                     <img
-                        src={ "https://drive.google.com/uc?export=view&id=1M1Ue4DSuX11qgFwS7VMUqcsyQ__qAzI8" }
+                        src={ "https://drive.google.com/thumbnail?sz=w400&id=1M1Ue4DSuX11qgFwS7VMUqcsyQ__qAzI8" }
                         alt="SPAICS Email"
                     />
                 </a>

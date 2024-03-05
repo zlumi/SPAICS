@@ -62,7 +62,7 @@ export default function DataStreamPage() {
             {user && <>
                 <div style={{ margin:"1rem", position:"relative" }}>
                 <p>
-                    This Page is currently Underdevelopment, the data is randomly generated. Thanks for your support :)
+                    This Page is currently Underdevelopment, the data was generated. Thanks for your support
                 </p>
                 </div>
 
